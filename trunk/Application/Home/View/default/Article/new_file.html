@@ -1,0 +1,122 @@
+<extend name="Base/common"/>
+<block name="style">
+    <link rel="stylesheet" href="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader.css">
+    <link rel="stylesheet" href="__CSS__/Home/main.css">
+    <link rel="stylesheet" href="__CSS__/Home/user.css">
+    <style type="text/css">
+        #circle-modal,#shCircle {
+            top: 300px;
+            left: 400px;
+        }
+    </style>
+</block>
+<block name="body">
+    <div class="container-fluid lg-body-container md-body-container">
+        <div class="row user-row">
+            <div class="col-xs-2">
+                <include file="Public/leftMenu"/>
+            </div>
+            <div class="col-xs-9">
+                <section class="wrapper">
+                    <div class="container-fluid">
+                        <!--<div class="row text-left">-->
+                            <!--<div class="col-lg-12">-->
+                                <!--<a href="javascript:void(0);" id="last-history" target="_self" class="btn btn-primary btn-round">-->
+                                    <!--<i class="fa fa-arrow-left"></i>返回-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="row">
+                            <!--<div id="shclFireballs"></div>-->
+                            <include file="Public/shCircle"/>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-1">
+                                <a href="javascript:void(0);" id="last-history" target="_self" class="btn btn-primary btn-round">
+                                    <i class="fa fa-arrow-left"></i>返回
+                                </a>
+                            </div>
+                            <div class="col-xs-11">
+                                <section class="panel">
+                                    <!--<header class="panel-heading">-->
+                                        <!--<span class="label label-primary">添加文章</span>-->
+                                       <!--<span class="tools pull-right">-->
+                                       <!--<a href="javascript:;" class="fa fa-chevron-down"></a>-->
+                                       <!--</span>-->
+                                    <!--</header>-->
+                                    <section class="panel-body">
+                                        <div class="form">
+                                            <form class="form-horizontal" id="add-article-form" action="{:U('Home/Article/addArticle')}" data-jump="{:U('Home/Index/index','',false)}/cid/{$category_id}" method="post" data-category-id="{$category_id}">
+                                                <div class="form-group">
+                                                    <label class="control-label col-xs-2">文章标题:</label>
+                                                    <div class="col-xs-10">
+                                                        <input type="text" class="form-control" id="article-title" name="article_title" placeholder="文章标题">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-xs-2">文章关键字:</label>
+                                                    <div class="col-xs-10">
+                                                        <input type="text" class="form-control" id="article-key-words" name="article_key_words" placeholder="文章关键字">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-xs-2">原文出处:</label>
+                                                    <div class="col-xs-10">
+                                                        <input type="text" class="form-control" id="article-from-where" name="article_from_where" placeholder="原文出处">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-xs-2">文章摘要:</label>
+                                                    <div class="col-xs-10">
+                                                        <textarea class="form-control" id="article-abstract" name="article_abstract" placeholder="文章摘要"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-xs-2"></label>
+                                                    <div class="col-xs-10">
+                                                        <script id="extra-editor" name="extra_editor" style="height:500px;" type="text/plain">
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-xs-2"></label>
+                                                    <div class="col-xs-10">
+                                                        <input type="submit" class="btn btn-primary form-control" value="添加">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </section>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <block name="script">
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
+        <script type="application/javascript" src="__JS__/Home/user.js"></script>
+        <script type="application/javascript" src="__JS__/Home/bind.js"></script>
+        <script src="__UE__/ueditor.config.js"></script>
+        <script src="__UE__/ueditor.all.js"></script>
+        <script src="__UE__/lang/zh-cn/zh-cn.js"></script>
+        <!--circle load-->
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader-min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                window.UEDITOR_HOME_URL = UE;  //UEDITOR_HOME_URL、config、all这三个顺序不能改变
+                window.onload=function(){
+                    window.UEDITOR_CONFIG.initialFrameHeight = 600;//编辑器的高度
+                    window.UEDITOR_CONFIG.imageUrl = UE_UPLOAD + "/ue_upload_img";          //图片上传提交地址
+                    window.UEDITOR_CONFIG.imagePath = UE_UPLOAD + "/Thumb";//编辑器调用图片的地址
+                };
+                UE.getEditor('extra-editor');
+            });
+        </script>
+        <script type="application/javascript" src="__JS__/Home/myShCircle.js"></script>
+        <script type="application/javascript" src="__JS__/Home/main_articles.js"></script>
+    </block>
+</block>

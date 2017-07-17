@@ -1,0 +1,20 @@
+<!--1表示文件夹，2表示HTML文件-->
+<div class="context-menu" id="menu" data-category-id="{$category_cid}" data-old-category-id="{$category_cid}" data-cmd-type="1" data-on-cmd-req-cat="{:U('Home/Category','',false)}" data-on-cmd-req-file="{:U('Home/Article','',false)}">
+    <ul class="list" style="z-index: 100; left: 244px; top: 244px; display: none;">
+        <li id="open-menu" data-check-display="true" data-group="0" class="" style="display: block;">打开</li>
+        <!--<li id="download-menu" data-group="0">下载</li>-->
+        <li class="separate" data-group="0"></li>
+        <!--<li id="i034729910222813487" class="has-more arrowicon" data-variable-menu="true" data-group="1">推送到设备-->
+            <!--<ul class="list">-->
+            <!--</ul>-->
+        <!--</li>-->
+        <!--<li class="separate" data-group="2"></li>-->
+        <!--<li id="i05126946945674717" data-group="3">分享(S)</li>-->
+        <!--<li class="separate" data-group="3"></li>-->
+        <li id="copy-menu" data-group="4">复制到</li>
+        <li id="move-menu" data-check-display="true" data-group="4" class="" style="display: block;">移动到</li>
+        <li class="separate" data-group="4"></li>
+        <li id="rename-menu" data-check-display="true" data-group="5" class="" style="display: block;">重命名</li>
+        <li id="delete-menu" data-check-display="true" data-group="5" class="" style="display: block;">删除</li>
+    </ul>
+</div>

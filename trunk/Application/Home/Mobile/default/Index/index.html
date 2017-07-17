@@ -1,0 +1,72 @@
+<!--<extend name="Base/common"/>-->
+<block name="style">
+    <link rel="stylesheet" href="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader.css">
+    <link rel="stylesheet" href="__CSS__/Home/main.css">
+    <link rel="stylesheet" href="__CSS__/Home/main_notes.css">
+    <!--<link rel="stylesheet" href="__CSS__/Home/diskSystem.css">-->
+    <link rel="stylesheet" href="__CSS__/Home/cover.css">
+    <link rel="stylesheet" href="__CSS__/Home/alpha.css">
+    <link rel="stylesheet" href="__CSS__/Home/disk_header.css">
+    <link rel="stylesheet" href="__CSS__/Home/user.css">
+    <link rel="stylesheet" href="__CSS__/Home/menu.css">
+    <style type="text/css">
+        #circle-modal,#shCircle {
+            top: 300px;
+            left: 400px;
+        }
+        .footer {
+            background: #25272e;
+            color: #87888a;
+            font-size: 14px;
+            position: relative;
+            padding: 5px 0 5px;
+        }
+        .module-list-view .list-view-item .fileicon {
+            cursor: default;
+            height: 26px;
+            width: 26px;
+            position: absolute;
+            left: 13px;
+            top: 10px;
+        }
+    </style>
+
+</block>
+<block name="body">
+    <div class="container-fluid lg-body-container md-body-container">
+        <div class="row user-row">
+            <div class="col-sm-12">
+                <include file="Index/list"/>
+            </div>
+        </div>
+    </div>
+    <block name="script">
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
+        <!--circle load-->
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader-min.js"></script>
+        <script type="application/javascript">
+            $(function(){
+                var g_active_node = $(document);
+                $('#shclFireballs').shCircleLoader({
+                    color: "red",
+                    dots: 24,
+                    dotsRadius: 13,
+                    keyframes:
+                            "0%   {background: red;    {prefix}transform: scale(1)}\
+                             20%  {background: orange; {prefix}transform: scale(.4)}\
+                             40%  {background: red;    {prefix}transform: scale(0)}\
+                             50%  {background: red;    {prefix}transform: scale(1)}\
+                             70%  {background: orange; {prefix}transform: scale(.4)}\
+                             90%  {background: red;    {prefix}transform: scale(0)}\
+                             100% {background: red;    {prefix}transform: scale(1)}"
+                });
+            });
+        </script>
+        <script type="application/javascript" src="__JS__/Home/myShCircle.js"></script>
+        <script type="application/javascript" src="__JS__/Home/user.js"></script>
+        <script type="application/javascript" src="__JS__/Home/bind.js"></script>
+        <script type="application/javascript" src="__JS__/Home/main_list.js"></script>
+        <script type="application/javascript" src="__JS__/Home/operate.js"></script>
+    </block>
+</block>

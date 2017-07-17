@@ -1,0 +1,131 @@
+<extend name="Base/common"/>
+<block name="style">
+    <link rel="stylesheet" href="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader.css">
+    <link rel="stylesheet" href="__CSS__/Home/main.css">
+    <link rel="stylesheet" href="__CSS__/Home/main_notes.css">
+    <!--<link rel="stylesheet" href="__CSS__/Home/diskSystem.css">-->
+    <link rel="stylesheet" href="__CSS__/Home/cover.css">
+    <link rel="stylesheet" href="__CSS__/Home/alpha.css">
+    <link rel="stylesheet" href="__CSS__/Home/disk_header.css">
+    <link rel="stylesheet" href="__CSS__/Home/user.css">
+    <link rel="stylesheet" href="__CSS__/Home/menu.css">
+    <style type="text/css">
+        #circle-modal,#shCircle {
+            top: 300px;
+            left: 400px;
+        }
+    </style>
+
+</block>
+<block name="body">
+    <div class="container-fluid lg-body-container md-body-container">
+        <div class="row user-row">
+            <div class="col-xs-2">
+                <include file="Public/leftMenu"/>
+            </div>
+            <div class="col-xs-9">
+                <section class="panel">
+                    <section class="panel-body">
+                        <div class="frame-main container-fluid" id="layoutMain">
+                            <div>
+                                <div class="row">
+                                    <include file="Software/toolbar"/>
+                                </div>
+                                <div class="row">
+                                    <include file="Software/list"/>
+                                </div>
+                                <div class="row">
+                                    <!--<div id="shclFireballs"></div>-->
+                                    <include file="Public/shCircle"/>
+                                </div>
+                                <div class="row">
+                                    <div class="container">
+                                        <div class="modal fade" id="circle-modal" tabindex="-1" role="dialog" aria-labelledby="circle-modal-title" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header"><button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                        <h4 id="update-modal-label" class="modal-title">上传文件</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="form">
+                                                            <form class="form-horizontal" enctype="multipart/form-data" action="{:U('Home/Software/uploadSoftware','',false)}/cid/{$category_cid}"
+                                                                  href-jump="{:U('Home/Software/index','',false)}/cid/{$category_cid}" data-cid="{$category_cid}" method="post" id="software-add-form">
+                                                                <div class="form-group hidden">
+                                                                    <label class="col-xs-3 control-label"></label>
+                                                                    <div class="col-xs-9">
+                                                                        <input type="text" class="form-control update-init-type"  id="software-cid" name="software_cid" value="{$category_cid}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-xs-3 control-label">软件名称：</label>
+                                                                    <div class="col-xs-9">
+                                                                        <input type="text" class="form-control update-init-type" placeholder="软件名称" id="software-name" name="software_name">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-xs-3 control-label">软件关键词：</label>
+                                                                    <div class="col-xs-9">
+                                                                        <input type="text" class="form-control update-init-type" placeholder="适用逗号分隔多个关键词" id="software-key-words" name="software_key_words">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-xs-3 control-label">软件说明：</label>
+                                                                    <div class="col-xs-9">
+                                                                        <textarea class="form-control" placeholder="软件说明" id="wiki-software" name="wiki_software"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-xs-3 control-label">选择文件：</label>
+                                                                    <div class="col-xs-9">
+                                                                        <input type="file" class="form-control" name="software">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-xs-3 control-label"></label>
+                                                                    <div class="col-xs-9">
+                                                                        <button type="submit" class="btn btn-primary form-control">上传</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <block name="script">
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
+        <!--circle load-->
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader-min.js"></script>
+        <script type="application/javascript">
+            $(function(){
+                var g_active_node = $(document);
+            });
+        </script>
+        <script type="application/javascript" src="__JS__/Home/myShCircle.js"></script>
+        <script type="application/javascript" src="__JS__/Home/user.js"></script>
+        <script type="application/javascript" src="__JS__/Home/bind.js"></script>
+        <script type="application/javascript" src="__JS__/Home/main_list.js"></script>
+        <script type="application/javascript" src="__JS__/Home/operate.js"></script>
+        <script type="application/javascript" src="__JS__/Home/dialog.js"></script>
+        <script type="application/javascript">
+            $(function(){
+                $(".upload-software").on("click",function(event){
+                    $("#circle-modal").modal('show');
+                });
+            });
+        </script>
+    </block>
+</block>

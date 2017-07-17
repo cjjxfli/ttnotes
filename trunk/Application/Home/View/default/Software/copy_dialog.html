@@ -1,0 +1,75 @@
+<div class="dialog dialog-fileTreeDialog dialog-gray" id="fileTreeDialog" data-self="{:U('Home/Software/readSoftwareCategoryTrees')}" style="width: 520px; top: 165px; bottom: auto; left: 25%; right: auto; z-index: 52;">
+    <div class="dialog-header dialog-drag">
+        <h3><span class="dialog-header-title"><em class="select-text">复制到</em></span></h3>
+        <div class="dialog-control">
+            <span class="dialog-icon dialog-close icon icon-close"><span class="sicon">×</span></span>
+        </div>
+    </div>
+    <div class="dialog-body">
+        <div class="file-tree-container">
+            <ul class="treeview treeview-content _disk_id_1">
+                <li>
+                    <div class="treeview-node treeview-node-on treeview-root _minus" _pl="0px" style="padding-left:0px">
+                        <span class="treeview-node-handler">
+                            <em class="b-in-blk plus icon-operate minus"></em>
+                            <dfn class="b-in-blk treeview-ic"></dfn>
+                            <span class="treeview-txt" node-path="/">全部文件</span>
+                        </span>
+                    </div>
+                    <ul class="treeview treeview-root-content treeview-content " _pl="15">
+                        <notempty name="root_software_info">
+                            <volist name="root_software_info" id="vol">
+                                <li>
+                                    <div class="treeview-node " _pl="15px" style="padding-left:15px" data-node-id="{$vol.id}">
+                                        <span class="treeview-node-handler">
+                                            <em class="b-in-blk plus icon-operate "></em>
+                                            <dfn class="b-in-blk treeview-ic"></dfn>
+                                            <span class="treeview-txt" node-path="/{$vol.name}">{$vol.name}</span>
+                                        </span>
+                                    </div>
+                                        <ul class="treeview treeview-content treeview-collapse" _pl="30px">
+                                    </ul>
+                                </li>
+                            </volist>
+                        </notempty>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="dialog-footer g-clearfix">
+        <a class="g-button g-button-large" data-button-id="b63" data-button-index="" href="javascript:void(0);" style="float: right; padding-left: 50px;">
+            <span class="g-button-right" style="padding-right: 50px;">
+                <span class="text btn-cancel" style="width: auto;">取消</span>
+            </span>
+        </a>
+        <a class="g-button g-button-blue-large" data-button-id="b65" data-button-index="" href="javascript:void(0);" style="float: right; padding-left: 50px;">
+            <span class="g-button-right" style="padding-right: 50px;">
+                <span class="text btn-sure" style="width: auto;">确定</span>
+            </span></a>
+        <a class="g-button g-button-large" data-button-id="b67" data-button-index="" href="javascript:void(0);" style="float: left;">
+            <span class="g-button-right">
+                <em class="icon icon-newfolder" title="新建文件夹"></em>
+                <span class="text btn-new-dir" style="width: auto;">新建文件夹</span>
+            </span>
+        </a>
+    </div>
+</div>
+
+<div id="copy-new-dir" style="visibility: hidden;display: none" data-post="{:U('Home/Category/addCategory','',false)}/cid/-1">
+    <li class="plus-createFolder">
+        <div class="treeview-node treenode-empty" _pl="30" style="padding-left:30px">
+            <span class="treeview-node-handler">
+                <em class="b-in-blk plus sprite-ic2 "></em>
+                <dfn class="b-in-blk treeview-ic"></dfn>
+                <span class="plus-create-folder">
+                    <input class="input _disk_id_4" type="text" value="新建文件夹">
+                <span class="sure _disk_id_2"></span>
+                <span class="cancel _disk_id_3"></span>
+            </span>
+            </span>
+        </div>
+        <ul class="treeview treeview-content treeview-collapse" _pl="45">
+        </ul>
+    </li>
+</div>

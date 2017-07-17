@@ -1,0 +1,220 @@
+<div node-type="module-list" class="module-list" style="height: 800px;">
+    <div node-type="module-history-list" class="module-history-list" data-cid="{$category_cid}">
+        <span class="history-list-dir">全部文件</span>
+        <span class="history-list-tips">已全部加载，共{$files_count}个</span>
+        <notempty name="favorites_ancestor_info">
+            <ul class="historylistmanager-history" id="module-list-history" node-type="historylistmanager-history" style="display: block;">
+                <li>
+                    <a data-deep="-1" href="javascript:;" id="pre-category">返回上一级</a>
+                    <span class="historylistmanager-separator">|</span>
+                </li>
+                <li node-type="historylistmanager-history-list">
+                    <a href="{:U('Home/Favorites/index')}" title="全部文件" class="category-list-node" data-deep="0" id="root-category" data-jump="{:U('Home/Favorites/index')}">全部文件</a>
+                    <volist name="favorites_ancestor_info" id="vol">
+                        <span class="historylistmanager-separator-gt">&gt;</span>
+                        <a href="javascript:;" title="全部文件/{$vol.title}" class="category-list-node category-route-node" data-deep="1" data-jump="{:U('Home/Favorites/index','',false)}/cid/{$vol.id}">{$vol.name}</a>
+                    </volist>
+                </li>
+            </ul>
+            <else/>
+            <ul class="historylistmanager-history" node-type="historylistmanager-history" style="display: none;">
+                <li>
+                    <a data-deep="-1" href="javascript:;">返回上一级</a>
+                    <span class="historylistmanager-separator">|</span>
+                </li>
+                <li node-type="historylistmanager-history-list"></li>
+            </ul>
+        </notempty>
+    </div>
+    <div class="list-view-header">
+        <div class="list-header">
+            <ul class="list-cols" node-type="cols">
+                <li data-key="name" class="col first-col" style="width:60%;">
+                    <div node-type="check" class="col-item check">
+                        <span class="check-icon"></span>
+                        <span class="check-all-text">全选</span>
+                        <span class="icon checksmall"></span>
+                    </div>
+                    <span class="text">文件名</span>
+                    <span class="order-icon"></span>
+                    <span class="icon up-icon icon-up"></span>
+                    <span class="icon downtitle-icon icon-downtitle"></span>
+                </li>
+                <li data-key="size" class="col" style="width:16%;">
+                    <span class="text">文件个数</span>
+                    <span class="order-icon"></span>
+                    <span class="icon up-icon icon-up"></span>
+                    <span class="icon downtitle-icon icon-downtitle"></span>
+                </li>
+                <li data-key="time" class="col last-col descend" style="width:24%;">
+                    <span class="text">修改日期</span>
+                    <span class="order-icon"></span>
+                    <span class="icon up-icon icon-up"></span>
+                    <span class="icon downtitle-icon icon-downtitle"></span>
+                </li>
+            </ul>
+            <ul class="grid-cols" node-type="cols" style="display: none;">
+                <li class="col first-col">
+                    <div node-type="check" class="col-item check">
+                        <span class="check-icon"></span>
+                        <span class="check-all-text">全选</span>
+                        <span class="icon checksmall icon-checksmall"></span>
+                    </div>
+                </li>
+            </ul>
+            <div class="list-header-operatearea global-clearfix">
+                <span class="count-tips">已选中0个文件/文件夹</span>
+                <div class="list-header-operate">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list-view-container" style="">
+        <div node-type="module-list-view" class="module-list-view" id="module-list" style="overflow-y: auto; height: 778px;">
+            <div class="list-view" style="height: auto;">
+                <notempty name="favorites_category_info">
+                    <volist name="favorites_category_info" id="vol">
+                        <dd class="g-clearfix list-view-item open-enable favorites-cat" _position="{$vol.id}" _cmd_installed="{$vol.id}" _installed="{$vol.id}">
+                            <span node-type="checkbox" class="checkbox">
+                            <span class="icon checksmall"></span>
+                            </span>
+                            <div class="fileicon dir-small">
+                            </div>
+                            <div class="file-name" style="width:60%">
+                                <div class="text">
+                                    <a href="javascript:void(0);" class="filename" title="{$vol.name}" data-jump="{:U('Home/Favorites/index','',false)}/cid/{$vol.id}">{$vol.name}</a>
+                                </div>
+                                <div class="operate">
+                                    <div class="button-box-mark" style="display:inline-block;*display:inline;*zoom:1;width:1px;height:1px;line-height:0;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="file-size" style="width:16%">
+                               - - <!--{$vol.files_include}-->
+                            </div>
+                            <div class="ctime" style="width:24%">
+                                {$vol.last_update_time}
+                            </div>
+                            <div class="path-info" style="width:0%">
+                                <span class="search-feild" node-type="search-feild"></span>
+                            </div>
+                        </dd>
+                    </volist>
+                    <else/>
+                </notempty>
+                <notempty name="favorites_info">
+                    <volist name="favorites_info" id="vol">
+                        <dd class="g-clearfix list-view-item open-enable favorites" _position="{$vol.id}" _cmd_installed="{$vol.id}" _installed="{$vol.id}">
+                            <span node-type="checkbox" class="checkbox"><span class="icon checksmall"></span></span>
+                            <!--text file icon-->
+                            <!--<div class="fileicon fileicon-small-txt">-->
+                            <!--</div>-->
+                            <div class="fileicon fileicon-sys-s-web">
+                            </div>
+                            <div class="file-name" style="width:60%">
+                                <div class="text">
+                                    <a href="{$vol.fav_url}" target="_blank" class="filename" title="{$vol.fav_title}">{$vol.fav_title}</a>
+                                </div>
+                                <div class="operate">
+                                    <div class="button-box-mark" style="display:inline-block;*display:inline;*zoom:1;width:1px;height:1px;line-height:0;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="file-size" style="width:16%">
+                                - -
+                            </div>
+                            <div class="ctime" style="width:24%">
+                                {$vol.last_update_time}
+                            </div>
+                            <div class="path-info" style="width:0%">
+                                <span class="search-feild" node-type="search-feild"></span>
+                            </div>
+                        </dd>
+                    </volist>
+                </notempty>
+            </div>
+        </div>
+    </div>
+    <div class="grid-view-container" style="display: none;">
+        <div node-type="module-grid-view" class="module-grid-view" style="height: 278px;">
+            <div class="grid-view">
+            </div>
+        </div>
+    </div>
+    <empty name="favorites_category_info">
+        <empty name="favorites_info">
+            <div class="list-empty-tips" style="display: block;visibility: visible;">
+                <div class="clearfix module-list-view-empty" style="" node-type="module">
+                    <div class="no-result-file-download">
+                        <div class="no-result-title no-result-file-bottom">
+                            <p class="no-result-file-word">
+                                您还没上传过文件哦，点击<span class="up-load upload-wrapper">上传
+					<form action="javascript:void(0);" style="position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;cursor:pointer;">
+                        <input title="点击选择文件" id="h5Input3" multiple="" accept="*/*" type="file" name="html5uploader" style="position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;cursor:pointer;">
+                    </form>
+					</span>按钮～
+                            </p>
+                        </div>
+                        <div class="no-result-file-twocode" node-type="no-result-twocode-pic">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </empty>
+    </empty>
+    <div class="module-edit-name">
+        <div class="new-dir-item" id="new-dir-item">
+            <input node-type="new-dir-box" class="box" id="new-dir-box" type="text" value="新建收藏夹" data-post="{:U('Home/Favorites/addFavoritesCategory','',false)}/cid/-1">
+            <span node-type="new-dir-sure" class="sure sure-to-new-dir sure-to-rename">
+                <em class="icon border-icon"></em>
+                <em class="icon checksmall-icon"></em>
+            </span>
+            <span node-type="new-dir-cancel" class="cancel">
+                <em class="icon border-icon"></em>
+                <em class="icon rename-cancel-icon"></em>
+            </span>
+        </div>
+    </div>
+
+    <!--begin dialog-->
+    <!--<include file="Public/dialog"/>-->
+    <!--end dialog-->
+
+    <!--begin copy&move dialog-->
+    <include file="Favorites/copy_dialog"/>
+    <!--end copy&move dialog-->
+
+    <!--begin context-menu-->
+    <include file="Favorites/context_menu"/>
+    <!--end context-menu-->
+
+    <!--begin dir-module-->
+    <div id="dir-module" style="display: none;">
+        <dd class="g-clearfix list-view-item open-enable" _position="0" _cmd_installed="1" _installed="1">
+            <span node-type="checkbox" class="checkbox">
+                <span class="icon checksmall"></span>
+            </span>
+            <div class="fileicon dir-small">
+            </div>
+            <div class="file-name" style="width:60%">
+                <div class="text">
+                    <a href="javascript:void(0);" class="filename" title="-">-</a>
+                </div>
+                <div class="operate">
+                    <div class="button-box-mark" style="display:inline-block;*display:inline;*zoom:1;width:1px;height:1px;line-height:0;">
+                    </div>
+                </div>
+            </div>
+            <div class="file-size" style="width:16%">
+                -
+            </div>
+            <div class="ctime" style="width:24%">
+                -
+            </div>
+            <div class="path-info" style="width:0%">
+                <span class="search-feild" node-type="search-feild"></span>
+            </div>
+        </dd>
+    </div>
+    <!--end dir-module-->
+</div>

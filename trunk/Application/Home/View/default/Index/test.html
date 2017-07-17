@@ -1,0 +1,101 @@
+<extend name="Base/common"/>
+<block name="style">
+
+    <link rel="stylesheet" href="__CSS__/Home/main.css">
+    <link rel="stylesheet" href="__CSS__/Home/main_notes.css">
+    <link rel="stylesheet" href="__CSS__/Home/diskSystem.css">
+    <link rel="stylesheet" href="__CSS__/Home/cover.css">
+    <link rel="stylesheet" href="__CSS__/Home/alpha.css">
+    <link rel="stylesheet" href="__CSS__/Home/disk_header.css">
+    <link rel="stylesheet" href="__CSS__/Home/user.css">
+    <style type="text/css">
+        /*#layoutAside {*/
+        /*top: 50px;*/
+        /*left: 0px;*/
+        /*bottom: 0px;*/
+        /*z-index: 9;*/
+        /*position: absolute;*/
+        /*}*/
+
+        /*#layoutMain {*/
+        /*top: 10px;*/
+        /*left: 4px;*/
+        /*bottom: 0px;*/
+        /*right: 10px;*/
+        /*z-index: 1;*/
+        /*background: #fff;*/
+        /*border-top-left-radius: 5px;*/
+        /*border-top-right-radius: 5px;*/
+        /*position: absolute;*/
+        /*}*/
+
+        /*#dynamicLayout_0 {*/
+        /*background: undefined;*/
+        /*top: 0px;*/
+        /*right: 0px;*/
+        /*left: 0px;*/
+        /*width: 100%;*/
+        /*height: 62px;*/
+        /*z-index: 41;*/
+        /*position: absolute;*/
+        /*}*/
+    </style>
+
+</block>
+<block name="body">
+    <div class="container-fluid lg-body-container md-body-container">
+        <div class="row user-row">
+            <div class="col-xs-2">
+                <include file="Public/leftMenu"/>
+            </div>
+            <div class="col-xs-9">
+                <section class="panel">
+                    <!--<section class="panel-heading">-->
+                    <!--<h4 class="text-center">我的笔记本</h4>-->
+                    <!--</section>-->
+                    <section class="panel-body">
+                        <div class="frame-main container-fluid" id="layoutMain">
+                            <div class="container-fluid-1">
+                                <div class="row-1">
+                                    <include file="Public/module_toolbar"/>
+                                </div>
+                                <div class="row-1">
+                                    <include file="Public/module_list"/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <block name="script">
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
+        <script type="application/javascript" src="__JS__/Home/user.js"></script>
+        <script type="application/javascript" src="__JS__/Home/bind.js"></script>
+        <!--<script type="application/javascript" src="__JS__/Common/baidu_all.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/all_9fece26.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/all_bfa75fb.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/asideAppDownloads-all_edbcf5e.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/baidu-tongji_f417109.js"></script>-->
+
+        <!--need or not-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/interface_acd23a3.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/log_2b7f000.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/mod_15bd44a.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/prefetch_b6fc868.js"></script>-->
+
+        <!--error-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/base_5f1a9bf.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/disk.header.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/disk.theme.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/plugin-header_5ef82f3.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/plugin-upload_0941ded.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/quota-all_cfa539a.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/timeline-all_375a638.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/vipWarn-all_c2c9835.js"></script>-->
+        <!--<script type="application/javascript" src="__JS__/Common/tmp/widget-sync_678aefd.js"></script>-->
+    </block>
+</block>

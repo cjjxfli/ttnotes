@@ -1,0 +1,55 @@
+<div class="container navbar-fixed-top">
+    <div class="top-header">
+        <header class="header white-bg">
+            <div class="row">
+                <div class="col-xs-5">
+                    <a href="{:U('Admin/Index/index')}">
+                        <img src="__IMG__/Common/logo.png"/>
+                    </a>
+                </div>
+                <div class="col-xs-6">
+                    <!-- START HEADER  NAV -->
+                    <nav class="nav text-right" id="top_menu">
+                        <ul class="nav top-menu">
+                            <!-- START USER LOGIN DROPDOWN  -->
+                            <div class="top-nav text-right">
+                                <ul class="nav pull-right top-menu">
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                            <img alt="" src="__CSS__/Admin/img/avatar1_small.jpg">
+                                    <span class="username">
+                                      欢迎您!{$listUser.user_name}
+                                    </span>
+                                            <b class="caret">
+                                            </b>
+                                        </a>
+                                        <ul class="dropdown-menu extended logout">
+                                            <li class="log-arrow-up">
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-cog">
+                                                    </i>
+                                                    设置
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{:U('Admin/User/logout')}">
+                                                    <i class="fa fa-key">
+                                                    </i>
+                                                    退出
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- END USER LOGIN DROPDOWN  -->
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+        </header>
+    </div>
+</div>

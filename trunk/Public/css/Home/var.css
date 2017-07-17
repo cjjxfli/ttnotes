@@ -1,0 +1,19 @@
+.sm-body-height {
+  min-height: 400px;
+}
+
+.md-body-height {
+  min-height: 650px;
+}
+
+.lg-body-height {
+  min-height: 900px;
+}
+
+.xlg-body-height {
+  min-height: 1100px;
+}
+
+.error {
+  color: red;
+}

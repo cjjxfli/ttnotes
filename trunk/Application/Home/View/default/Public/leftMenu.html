@@ -1,0 +1,65 @@
+<div class="container-fluid user-left user-left-container">
+    <div class="container-fluid md-body-container body-margin-top user-left-bg">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#">全部文件</a></li>
+            </ol>
+        </div>
+        <div class="row">
+        <ul id="accordion" class="accordion" data-self="__SELF__">
+            <li>
+                <div class="link" name="1"><i class="fa fa-shopping-cart"></i>我的笔记本<i class="fa fa-chevron-down"></i></div>
+                <ul id="opt_1" class="submenu">
+                    <li><a href="{:U('Home/Index/index','',false)}/cid/-1" target="_self">我的所有笔记本</a></li>
+                    <div class="sub-link"></div>
+                    <notempty name="root_category_info">
+                        <volist name="root_category_info" id="vol">
+                            <li><a href="{:U('Home/Index/index','',false)}/cid/{$vol.id}" target="_self">{$vol.name}</a></li>
+                            <div class="sub-link"></div>
+                        </volist>
+                    </notempty>
+                    <!--<li><a href="#" target="_self">照片</a></li>-->
+                    <!--<div class="sub-link"></div>-->
+                    <!--<li><a href="#" target="_self">收藏</a></li>-->
+                </ul>
+            </li>
+            <li>
+                <div class="link" name="2"><i class="fa fa-info"></i>我的收藏夹<i class="fa fa-chevron-down"></i></div>
+                <ul id="opt_2" class="submenu">
+                    <li><a href="{:U('Home/Favorites/index','',false)}/cid/-1" target="_self">所有的收藏</a></li>
+                    <div class="sub-link"></div>
+                    <!--<li><a href="#" target="_self">文档2</a></li>-->
+                    <!--<div class="sub-link"></div>-->
+                    <!--<li><a href="#" target="_self">文档3</a></li>-->
+                    <notempty name="root_favorites_info">
+                        <volist name="root_favorites_info" id="vol">
+                            <li><a href="{:U('Home/Favorites/index','',false)}/cid/{$vol.id}" target="_self">{$vol.name}</a></li>
+                            <div class="sub-link"></div>
+                        </volist>
+                    </notempty>
+                </ul>
+            </li>
+            <li>
+                <div class="link" name="3"><i class="fa fa-user"></i>我的下载中心<i class="fa fa-chevron-down"></i></div>
+                <ul id="opt_3" class="submenu">
+                    <li><a href="{:U('Home/Software/index','',false)}/cid/-1" target="_self">所有软件</a></li>
+                    <div class="sub-link"></div>
+                    <!--<li><a href="#">开发软件</a></li>-->
+                    <!--<div class="sub-link"></div>-->
+                    <!--<li><a href="#">系统软件</a></li>-->
+                    <!--<div class="sub-link"></div>-->
+                    <!--<li><a href="#">日常工具</a></li>-->
+                    <!--<div class="sub-link"></div>-->
+                    <!--<li><a href="#">操作系统</a></li>-->
+                    <notempty name="root_software_info">
+                        <volist name="root_software_info" id="vol">
+                            <li><a href="{:U('Home/Software/index','',false)}/cid/{$vol.id}" target="_self">{$vol.name}</a></li>
+                            <div class="sub-link"></div>
+                        </volist>
+                    </notempty>
+                </ul>
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>

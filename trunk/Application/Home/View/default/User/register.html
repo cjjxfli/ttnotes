@@ -1,0 +1,84 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link rel="stylesheet" href="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader.css">
+    <link rel="stylesheet" href="__CSS__/Home/main.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__\Home\user.min.css">
+    <style type="text/css">
+        #circle-modal,#shCircle {
+            top: 300px;
+            left: 400px;
+        }
+    </style>
+</block>
+
+<block name="body">
+    <div class="container-fluid lg-body-container md-body-container">
+        <div class="row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10">
+            <form class="form-horizontal" id="register-form" action="{:U('Home/User/register')}" method="post" data-jump="{:U('Home/User/login')}" role="form">
+                <div class="show" id="mobile-block">
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" for="user-email"><em class="error">*</em>邮箱:</label>
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="user-email" name="user_email" placeholder="邮箱">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" for="email-password"><em class="error">*</em>密码:</label>
+                        <div class="col-xs-9">
+                            <input type="password" class="form-control" placeholder="密码为字母和数组组合,最短6位" id="email-password" name="email_password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" for="email-repeat-password"><em class="error">*</em>密码确认:</label>
+                        <div class="col-xs-9">
+                            <input type="password" class="form-control" placeholder="再次输入密码" id="email-repeat-password" name="email_repeat_password">
+                        </div>
+                    </div>
+                    <eq name="Think.config.WEB_SITE_VERIFY" value="1">
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label" for="email-verify"><em class="error">*</em>验证码:</label>
+                            <div class="col-xs-7">
+                                <input type="text" class="form-control form-inline" placeholder="验证码" id="email-verify" name="email_verify">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="{:U('Home/User/verify')}" class="img img-responsive form-control form-inline" id="img-verify-email" alt="点击刷新">
+                            </div>
+                        </div>
+                    </eq>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label" for="user-submit"></label>
+                    <div class="col-xs-8">
+                        <input type="submit" class="submit btn btn-primary form-control" id="user-submit" name="user_submit" value="注册">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-3"></label>
+                    <div class="col-xs-8">
+                        <span class="form-control">已有账号?<a href="{:U('Home/User/login')}" target="_self">登录</a></span>
+                    </div>
+                </div>
+            </form>
+            </div>
+            <div class="col-xs-1"></div>
+        </div>
+        <div class="row">
+            <!--<div id="shclFireballs"></div>-->
+            <include file="Public/shCircle"/>
+        </div>
+    </div>
+</block>
+
+<block name="script">
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.md5.js"></script>
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
+    <!--circle load-->
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader-min.js"></script>
+    <script type="application/javascript" src="__JS__/Home/myShCircle.js"></script>
+    <script type="application/javascript" src="__JS__/Home/user.min.js"></script>
+    <script type="application/javascript" src="__JS__/Home/register.js"></script>
+</block>

@@ -1,0 +1,204 @@
+@import "var";
+
+#img-verify {
+  width: 160px;
+  height: 40px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#img-verify-email {
+  width: 160px;
+  height: 40px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#login-form {
+  margin-top: 40px;
+  padding-bottom: 60px;
+  height: 380px;
+  .btn-primary {
+    &:hover {
+      background: $main_nav_bg_color;
+    }
+  }
+}
+
+#register-form {
+  @extend #login-form;
+}
+
+.user-row {
+  //margin-left: -90px;
+  //padding-left: -15px;
+  width: 100%;
+  min-width: 220px;
+  min-height: 700px;
+  .col-xs-2 {
+    padding-left: 0px;
+    margin-top: 3px;
+  }
+}
+
+.user-left-container {
+  background-color: $headBackGroundColor;
+  .user-left-bg {
+    background-color: $headBackGroundColor;
+    color: $headFontColor;
+    font-size: $headFontSize;
+    text-align: center;
+    margin: 0 auto;
+    //padding-left: -30px;
+  }
+  .breadcrumb {
+    a {
+      color: $headFontColor;
+    }
+  }
+  ul {
+    list-style-type: none;
+    margin-left: 0px;
+    a {
+      text-decoration: none;
+      color: $headFontColor;
+      font-size: 14px;
+      width: 100%;
+      min-width: 220px;
+      //display: inline-block;
+      &:hover,&:active,&:focus {
+        color: $headFontColor;
+        background-color: $headActiveBackGroundColor;
+        width: 100%;
+        min-width: 220px;
+      }
+    }
+  }
+  .accordion {
+    width: 100%;
+    max-width: 360px;
+    min-width: 180px;
+    margin: 30px auto 20px;
+    background: $headBackGroundColor;
+    color: $headFontColor;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    .link {
+      cursor: pointer;
+      display: block;
+      padding: 15px 15px 15px 42px;
+      //color: #4D4D4D;
+      color: $headFontColor;
+      font-size: 14px;
+      font-weight: 700;
+      border-bottom: 1px solid #CCC;
+      position: relative;
+      -webkit-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+    }
+    li {
+      i {
+        position: absolute;
+        top: 16px;
+        left: 12px;
+        font-size: 18px;
+        color: $headFontColor;
+        //color:red;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+      }
+      .fa-chevron-down {
+        right: 12px;
+        left: auto;
+        font-size: 16px;
+      }
+      &:last-child {
+        link {
+          border-bottom: 0;
+        }
+      }
+      .open {
+        margin-left: 0px;
+        .link {
+          color: $headFontColor;
+        }
+        i {
+          color: $headFontColor;
+        }
+        .fa-chevron-down {
+          -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .submenu,ul {
+      display: none;
+      background: $headBackGroundColor;
+      font-size: 14px;
+      text-align: right;
+      li {
+        border-bottom: 1px solid #4b4a5e;
+        margin-left: 0px;
+        a {
+          display: inline-block;
+          width: 100%;
+          max-width: 360px;
+          min-width: 170px;
+          text-decoration: none;
+          color: $headFontColor;
+          //padding: 9px;
+          padding-left: 1px;
+          margin-left: 0px;
+          -webkit-transition: all 0.25s ease;
+          -o-transition: all 0.25s ease;
+          transition: all 0.25s ease;
+          &:hover,&:active,&:focus  {
+            background: $headActiveBackGroundColor;
+            color: $headFontColor;
+          }
+        }
+      }
+      .sub-link {
+        cursor: pointer;
+        display: block;
+        padding: 5px 5px 5px 32px;
+        //color: #4D4D4D;
+        color: $headFontColor;
+        font-size: 14px;
+        font-weight: 700;
+        border-bottom: 1px solid #CCC;
+        position: relative;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+      }
+      .active {
+        background: $headActiveBackGroundColor;
+        color: $headFontColor;
+      }
+    }
+  }
+  .my-row {
+    margin-bottom: 13px;
+    a {
+      color: $headFontColor;
+      font-size: 20px;
+      width: 100%;
+      min-width: 220px;
+      display: inline-block;
+      &:hover,&:active {
+        background-color: $headActiveBackGroundColor;
+        width: 100%;
+        min-width: 220px;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,38 @@
+<div id="top-bar" class="top-bar">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12 top-social">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">我的笔记本</a>
+                </div>
+            </div><!--/ Top social end -->
+
+            <div class="col-md-6 col-sm-6 col-xs-12 top-menu ">
+                <notempty name="user_data">
+                    <ul class="unstyled" style="width: 100%;min-width: 260px;margin-right: 10px;">
+                        <!--<li><a href="{:U('Home/User/userCenter')}" target="_self">-->
+                            <!--微信公众号-->
+                        <!--</a></li>-->
+                        <li class="dropdown">
+                            <a href="{:U('Home/User/userCenter')}" target="_self" data-toggle="dropdown">
+                                个人中心
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{:U('Home/User/userCenter')}" target="_self">
+                                    欢迎您!{$user_data['user_name']}
+                                </a></li>
+                                <li><a href="{:U('Home/User/userCenter')}" target="_self">
+                                    我的空间
+                                </a></li>
+                                <li><a href="{:U('Home/User/logout')}" target="_self">
+                                    退出
+                                </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </notempty>
+            </div><!--/ Top menu end -->
+        </div>
+    </div>
+</div>

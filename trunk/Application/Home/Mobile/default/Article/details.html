@@ -1,0 +1,70 @@
+<extend name="Base/common"/>
+<block name="style">
+    <link rel="stylesheet" href="__CSS__/Home/main.css">
+    <link rel="stylesheet" href="__CSS__/Home/user.css">
+    <style type="text/css">
+        #circle-modal,#shCircle {
+            top: 300px;
+            left: 400px;
+        }
+        .footer {
+            background: #25272e;
+            color: #87888a;
+            font-size: 14px;
+            position: relative;
+            padding: 5px 0 5px;
+        }
+        .module-list-view .list-view-item .fileicon {
+            cursor: default;
+            height: 26px;
+            width: 26px;
+            position: absolute;
+            left: 13px;
+            top: 10px;
+        }
+    </style>
+</block>
+<block name="title">
+    <title>{$article_info.title}</title>
+</block>
+<block name="body">
+    <div class="container-fluid lg-body-container md-body-container">
+        <div class="row user-row" style="padding:0px!important">
+            <div class="col-sm-12" style="padding:0px!important">
+                    <h4 class="text-center">{$article_info.title}</h4>
+                <script id="extra-editor" name="extra_editor" type="text/plain">
+{$article_info.content}
+                </script>
+            </div>
+        </div>
+    </div>
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
+    <script type="application/javascript" src="__JS__/Home/user.js"></script>
+    <script type="application/javascript" src="__JS__/Home/bind.js"></script>
+    <script src="__UE__/ueditor.config.js"></script>
+    <script src="__UE__/ueditor.all.js"></script>
+    <script src="__UE__/lang/zh-cn/zh-cn.js"></script>
+    <!--circle load-->
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader-min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            window.UEDITOR_HOME_URL = UE;  //UEDITOR_HOME_URL、config、all这三个顺序不能改变
+            window.onload=function(){
+                window.UEDITOR_CONFIG.initialFrameHeight = 600;//编辑器的高度
+                window.UEDITOR_CONFIG.imageUrl = UE_UPLOAD + "/ue_upload_img";          //图片上传提交地址
+                window.UEDITOR_CONFIG.imagePath = UE_UPLOAD + "/Thumb";//编辑器调用图片的地址
+            };
+            UE.getEditor('extra-editor',{
+                toolbars:[
+                        []
+                ]
+            });
+        });
+    </script>
+    <script type="application/javascript" src="__JS__/Home/myShCircle.js"></script>
+    <script type="application/javascript" src="__JS__/Home/user.js"></script>
+    <script type="application/javascript" src="__JS__/Home/bind.js"></script>
+    <script type="application/javascript" src="__JS__/Home/main_list.js"></script>
+    <script type="application/javascript" src="__JS__/Home/operate.js"></script>
+</block>

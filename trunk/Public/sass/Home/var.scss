@@ -1,0 +1,39 @@
+$main_head_bg_color:#fafafa;
+
+$main_nav_bg_color:#1bbc9b;
+
+$headBackGroundColor:#3a5371;
+$headActiveBackGroundColor:#1bbc9b;
+$headFontSize:16px;
+$headFontColor:#ffffff;
+$headDefaultWidth:1300px;
+$headDefaultHeight:80px;
+$headPhoneFontColor:#93a9c3;
+$headNormalButtonBGColor:#899fb9;
+
+@mixin min-body-height($res){
+  @media screen and (min-height: $res) {
+    //@content;
+    min-height: $res;
+  }
+}
+
+.sm-body-height {
+  min-height: 400px;
+}
+
+.md-body-height {
+  min-height: 650px;
+}
+
+.lg-body-height {
+  min-height: 900px;
+}
+
+.xlg-body-height {
+  min-height: 1100px;
+}
+
+.error {
+  color: red;
+}

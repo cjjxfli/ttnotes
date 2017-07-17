@@ -1,0 +1,161 @@
+<div class="container-fluid module-toolbar g-clearfix">
+    <div>
+        <div>
+            <div class="default-dom">
+                <!--begin list-grid-switch-->
+                <div class="list-grid-switch" rm-data="list-switched-on">
+                    <a node-type="list-switch" style="display: none;" class="list-switch" href="javascript:void(0)">
+                        <span class="icon icon-list"></span>
+                    </a>
+                    <a node-type="grid-switch" class="grid-switch" href="javascript:void(0)">
+                        <span class="icon icon-grid"></span>
+                    </a>
+                </div>
+                <!--end list-grid-switch-->
+                <!--begin sort-switch-->
+                <div class="sort-switch">
+                    <div node-type="sort-switch-btn" class="sort-switch-btn" href="javascript:void(0)">
+                        <span class="icon icon-order"></span>
+                    </div>
+                    <div node-type="sort-switch-list" class="sort-switch-list">
+                        <span data-key="name" class="sort-item">
+                        <em class="icon icon-sort-select"></em>
+                        文件名
+                        </span>
+                        <span data-key="size" class="sort-item">
+                        <em class="icon icon-sort-select"></em>
+                        大小
+                        </span>
+                        <span data-key="time" class="sort-item current">
+                        <em class="icon icon-sort-select"></em>
+                        修改日期
+                        </span>
+                    </div>
+                </div>
+                <!--end sort-switch-->
+                <!--begin bar-search-->
+                <div class="bar-search">
+                    <div class="form-box" node-type="form-box">
+                        <form node-type="search-form" class="search-form clearfix" action="javascript: void(0)" method="get">
+                            <input node-type="search-query click-ele" data-key="SEARCH_QUERY" autocomplete="off" class="search-query" name="q" value="" spellchecking="off" type="text">
+                            <span node-type="search-clear" class="input-clear icon icon-search-del" style="display: none;"></span>
+                                <span node-type="click-ele" data-key="SEARCH_BUTTON" class="search-button">
+                                <span class="icon icon-search"></span>
+                                </span>
+                            <span node-type="search-placeholder" class="input-placeholder" style="display: block;">搜索您的文件</span>
+                        </form>
+                    </div>
+                </div>
+                <!--end bar-search-->
+                <!--end sort-switch-->
+                <div class="bar" rm-style="white-space: nowrap;position: relative">
+                    <div class="button-box-mark" style="display:inline-block;*display:inline;*zoom:1;width:1px;height:1px;line-height:0;"></div>
+                    <!--begin tools-->
+                    <div class="tools" style="position: absolute; top: 0px; padding-top: 11px; line-height: normal; padding-left: 0px; width: auto; visibility: visible;">
+                        <span class="g-dropdown-button">
+                            <!--<a class="g-button g-button-blue blue-upload upload-wrapper" data-button-id="b9" data-button-index="1" href="javascript:void(0);">-->
+                                <!--<span class="g-button-right">-->
+                                    <!--<em class="icon icon-upload" title="上传"></em>-->
+                                    <!--<span class="text" style="width: 40px;">上传</span>-->
+                                <!--</span>-->
+                                <!--<form action="javascript:void(0);" rm-style="position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;cursor:pointer;">-->
+                                <!--<input title="点击选择文件" id="h5Input0" multiple="" accept="*/*" type="file" name="html5uploader" rm-style="position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;cursor:pointer;">-->
+                                <!--</form>-->
+                            <!--</a>-->
+                            <span class="menu" style="width: 84px;">
+                                <a data-menu-id="b-menu0" class="g-button-menu  upload-wrapper" href="javascript:void(0);">
+                                    上传文件
+                                    <form action="javascript:void(0);" rm-style="position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;cursor:pointer;">
+                                        <input title="点击选择文件" id="h5Input1" multiple="" accept="*/*" type="file" name="html5uploader" style="position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;cursor:pointer;">
+                                    </form>
+                                </a>
+                                <a data-menu-id="b-menu1" class="g-button-menu  upload-wrapper" href="javascript:void(0);">
+                                    上传文件夹
+                                    <form action="javascript:void(0);" rm-style="position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;cursor:pointer;">
+                                        <input title="点击选择文件夹" id="h5Input2" multiple="" webkitdirectory="" accept="*/*" type="file" name="html5uploader" style="position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;cursor:pointer;">
+                                    </form>
+                                </a>
+                            </span>
+                        </span>
+                        <a class="g-button" id="new-folder-btn" data-button-id="b11" data-button-index="2" href="javascript:void(0);" style="display: inline-block;">
+                        <span class="g-button-right">
+                            <em class="icon icon-newfolder" title="新建收藏夹"></em>
+                            <span class="text" style="width: auto;">新建收藏夹</span>
+                        </span>
+                        </a>
+                        <a class="g-button" id="new-fav-btn" data-button-id="b12" data-jump="{:U('Home/Favorites/addFavorites','',false)}/cid/{$category_cid}" data-button-index="3" href="javascript:void(0);" style="display: inline-block;">
+                        <span class="g-button-right">
+                            <em class="icon icon-edit" title="新建收藏"></em>
+                            <span class="text" style="width: auto;">新建收藏</span>
+                        </span>
+                        </a>
+                        <span class="g-dropdown-button tools-more" style="display: none;">
+                            <a class="g-button" data-button-id="b17" data-button-index="" href="javascript:void(0);">
+                                <span class="g-button-right">
+                                    <em class="icon icon-more" title="更多"></em>
+                                    <span class="text" style="width: auto;">更多</span>
+                                </span>
+                            </a>
+                            <span class="menu" style="width: 70px;">
+                                <a style="display:none;" data-menu-id="b-menu0" class="g-button-menu g-menu-hasIcon" href="javascript:void(0);">
+                                    <em class="icon icon-upload"></em>上传</a>
+                                <a style="display:none;" data-menu-id="b-menu1" class="g-button-menu g-menu-hasIcon" href="javascript:void(0);">
+                                    <em class="icon icon-newfolder"></em>
+                                    新建收藏夹
+                                </a>
+                                <a style="display:none;" data-menu-id="b-menu2" class="g-button-menu g-menu-hasIcon" href="javascript:void(0);">
+                                    <em class="icon icon-download"></em>
+                                    离线下载
+                                </a>
+                                <a style="display:none;" data-menu-id="b-menu3" class="g-button-menu g-menu-hasIcon" href="javascript:void(0);">
+                                    <em class="icon icon-device"></em>
+                                    我的设备
+                                </a>
+                            </span>
+                        </span>
+                    </div>
+                    <!--end tools-->
+                    <div class="button-box-mark" style="display:inline-block;*display:inline;*zoom:1;width:1px;height:1px;line-height:0;"></div>
+                    <!--begin list-tools-->
+                    <div class="list-tools opacity-button-box" style="position: absolute; top: 0px; padding-top: 11px; line-height: normal; display: block; visibility: hidden; width: auto; padding-left: 327px;">
+                        <a class="g-button" data-button-id="b23" data-button-index="3" href="javascript:void(0);" style="display: inline-block;">
+                        <span class="g-button-right">
+                            <em class="icon icon-download" title="下载"></em>
+                            <span class="text" style="width: auto;">下载</span>
+                        </span>
+                        </a>
+                        <a class="g-button" data-button-id="b27" data-button-index="5" href="javascript:void(0);" style="display: inline-block;">
+                        <span class="g-button-right">
+                            <em class="icon icon-delete" title="删除"></em>
+                            <span class="text" style="width: auto;">删除</span>
+                        </span>
+                        </a>
+                        <a class="g-button" data-button-id="b35" data-button-index="101" href="javascript:void(0);" style="display: inline-block;">
+                        <span class="g-button-right">
+                            <span class="text" style="width: auto;">重命名</span>
+                        </span>
+                        </a>
+                        <a class="g-button" data-button-id="b37" data-button-index="102" href="javascript:void(0);" style="display: inline-block;">
+                        <span class="g-button-right">
+                            <span class="text" style="width: auto;">复制到</span>
+                        </span>
+                        </a>
+                        <a class="g-button" data-button-id="b39" data-button-index="103" href="javascript:void(0);" style="display: inline-block;">
+                        <span class="g-button-right">
+                            <span class="text" style="width: auto;">移动到</span>
+                        </span>
+                        </a>
+                    </div>
+                    <!--end list-tools-->
+                </div>
+                <!--end bar-->
+                <div class="after-dom"></div>
+                <div class="user-dom" style="display: none;"></div>
+                <!--<div node-type="yun-pic-bar" class="yun-pic-bar g-clearfix" style="display: none;">-->
+                    <!--<a href="/disk/timeline" class="btn-item">时光轴</a>-->
+                    <!--<a href="javascript:void(0);" class="btn-item selected">最近上传</a>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,332 @@
+/*****百度收藏夹样式*****/
+
+/*****百度收藏夹主体*****/
+input,textarea {
+    font: 12px Tahoma;
+    color: #666666;
+    padding: 2px;
+    border: solid 1px #DBDBDB
+}
+
+#arelctive a {
+    position: relative;
+    text-decoration: none;
+}
+/*****百度收藏夹主体*****/
+
+body {
+    margin: 4px 0
+}
+
+p {
+    margin: 0;
+    padding: 0
+}
+
+img {
+    border: 0
+}
+
+td,p,#u {
+    font-size: 12px
+}
+
+#b,#u,#l td,a {
+    font-family: arial
+}
+
+#kw {
+    font: 16px Verdana;
+    height: 1.78em;
+    padding-top: 2px
+}
+
+#b {
+    height: 30px;
+    padding-top: 4px
+}
+
+#b,#b a {
+    color: #77c
+}
+
+#sb {
+    height: 2em;
+    width: 5.6em
+}
+
+#km {
+    height: 50px
+}
+
+#l {
+    margin: 0 0 5px 15px
+}
+
+#l td {
+    padding-left: 107px
+}
+
+p,table {
+    width: 650px;
+    border: 0
+}
+
+#l td,#sb,#km {
+    font-size: 14px
+}
+
+#l a,#l b {
+    margin-right: 1.14em
+}
+
+a {
+    color: #00c
+}
+
+a:active {
+    color: #f60
+}
+
+#hp {
+    position: absolute;
+    margin-left: 6px
+}
+
+#lk {
+    width: auto;
+    line-height: 18px;
+    vertical-align: top
+}
+
+form {
+    position: relative;
+    z-index: 9
+}
+
+.f1 {
+    font-size: 12px;
+    color: #888888;
+    text-decoration: none;
+}
+
+.f2 {
+    position: relative;
+    color: #883507;
+    text-decoration: none
+}
+
+.f3 {
+    font-size: 12px;
+    color: #09bf00;
+    text-decoration: none;
+    background: #f3fdff
+}
+
+.f4 {
+    font-weight: bolder;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+    background: #fffdf3
+}
+
+#cal {
+    width: 434px;
+    border: 2px solid #78aaff;
+    font-size: 12px;
+    margin: 5px 0 0 0px;
+}
+/*****百度收藏夹样式*****/
+/*****日历样式*****/
+#cal #top {
+    height: 29px;
+    line-height: 29px;
+    background: #78aaff;
+    color: #003784;
+    padding-left: 70px;
+}
+
+#cal #top select {
+    font-size: 12px;
+}
+
+#cal #top input {
+    padding: 0;
+}
+
+#cal ul#wk {
+    background-color: #78aaff;
+    margin: 0;
+    padding: 0;
+    height: 25px;
+}
+
+#cal ul#wk li {
+    float: left;
+    width: 60px;
+    text-align: center;
+    line-height: 25px;
+    list-style: none;
+}
+
+#cal ul#wk li b {
+    font-weight: normal;
+    color: #c60b02;
+}
+
+#cal #cm {
+    clear: left;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px dotted #ddd;
+    position: relative;
+}
+
+#cal #cm .cell {
+    position: absolute;
+    width: 42px;
+    height: 36px;
+    text-align: center;
+    margin: 0 0 0 9px;
+}
+
+#cal #cm .cell .so {
+    font: bold 16px arial;
+}
+
+#cal #bm {
+    text-align: right;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 13px 0 0;
+}
+
+#cal #bm a {
+    color: 7977ce;
+}
+
+#cal #fd {
+    display: none;
+    position: absolute;
+    border: 1px solid #dddddf;
+    background: #feffcd;
+    padding: 10px;
+    line-height: 21px;
+    width: 150px;
+}
+
+#cal #fd b {
+    font-weight: normal;
+    color: #c60a00;
+}
+
+#cal2 {
+    width: 213PX;
+    border: 2px solid #78aaff;
+    font-size: 12px;
+    margin: 5px 0 0 0px;
+}
+
+#cal2 #top2 {
+    height: 40px;
+    line-height: 29px;
+    background: #78aaff;
+    color: #003784;
+    padding-left: 0px;
+}
+
+#cal2 #top2 select {
+    font-size: 12px;
+}
+
+#cal2 #top2 textarea {
+    color: #888888;
+}
+
+#cal2 #top2 input {
+    padding: 0;
+}
+
+#cal2 ul#wk {
+    margin: 0;
+    padding: 0;
+    height: 180px;
+    line-height: 21px;
+}
+
+#cal2 ul#wk li {
+    float: left;
+    width: 60px;
+    text-align: center;
+    line-height: 25px;
+    list-style: none;
+}
+
+#cal2 ul#wk li b {
+    font-weight: normal;
+    color: #c60b02;
+}
+
+#cal2 #cm {
+    clear: left;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px dotted #ddd;
+    position: relative;
+}
+
+#cal2 #cm .cell {
+    position: absolute;
+    width: 42px;
+    height: 36px;
+    text-align: center;
+    margin: 0 0 0 9px;
+}
+
+#cal2 #cm .cell .so {
+    font: bold 16px arial;
+}
+
+#cal2 #bm {
+    background-color: #78aaff;
+    text-align: left;
+    height: 29px;
+    line-height: 20px;
+    padding: 0 13px 0 0;
+}
+
+#cal2 #bm a {
+    color: 7977ce;
+}
+
+#cal2 #fd {
+    display: none;
+    position: absolute;
+    border: 1px solid #dddddf;
+    background: #feffcd;
+    padding: 10px;
+    line-height: 21px;
+    width: 150px;
+}
+
+#cal2 #fd b {
+    font-weight: normal;
+    color: #c60a00;
+}
+
+#mynote {
+    float: right;
+}
+/*****日历样式*****/
+#cal #top {
+    padding-top: 4px;
+}
+
+#cal #top input {
+    width: 65px;
+}
+
+#cal #fd {
+    width: 170px;
+}
+
+

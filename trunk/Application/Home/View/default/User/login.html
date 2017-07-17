@@ -1,0 +1,75 @@
+<extend name="Base/common"/>
+<block name="style">
+    <link rel="stylesheet" href="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader.css">
+    <link rel="stylesheet" href="__CSS__/Home/main.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__\Home\user.min.css">
+    <style type="text/css">
+        #circle-modal,#shCircle {
+            top: 300px;
+            left: 400px;
+        }
+    </style>
+</block>
+<block name="body">
+    <div class="container-fluid lg-body-container md-body-container">
+        <div class="row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10">
+            <form class="form-horizontal" id="login-form" action="{:U('Home/User/login')}" sms-timeout="{$sms_timeout}" data-jump="{:U('Home/Index/index')}" method="post" role="form">
+                <div class="show" id="name-block">
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" for="user-name"><em class="error">*</em>用户名:</label>
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="user-name" name="user_name" placeholder="用户名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" for="user-password"><em class="error">*</em>密码:</label>
+                        <div class="col-xs-9">
+                            <input type="password" class="form-control" id="user-password" name="user_password" placeholder="密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" for="user-verify"><em class="error">*</em>验证码:</label>
+                        <div class="col-xs-7">
+                            <input type="text" class="form-control form-inline" id="user-verify" name="user_verify" placeholder="验证码">
+                        </div>
+                        <div class="col-xs-2">
+                            <img src="{:U('Home/User/verify')}" class="img img-responsive form-control form-inline" id="img-verify-email" alt="单击刷新">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" for="user-submit"></label>
+                        <div class="col-xs-9">
+                            <input type="submit" class="submit btn btn-primary form-control" id="user-submit" name="user_submit" value="登录">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label"></label>
+                    <div class="col-xs-5">
+                        <span class="form-control form-inline">忘记密码?<a href="{:('Home/User/findback')}" target="_self">找回密码</a></span>
+                    </div>
+                    <div class="col-xs-4">
+                        <span class="form-control form-inline">没有账号?<a href="{:U('Home/User/register')}" target="_self">注册</a></span>
+                    </div>
+                </div>
+            </form>
+            </div>
+            <div class="col-xs-1"></div>
+        </div>
+        <div class="row">
+            <include file="Public/shCircle"/>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.md5.js"></script>
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
+    <!--circle load-->
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader-min.js"></script>
+    <script type="application/javascript" src="__JS__/Home/myShCircle.js"></script>
+    <script type="application/javascript" src="__JS__/Home/user.min.js"></script>
+    <script type="application/javascript" src="__JS__/Home/login.js"></script>
+</block>

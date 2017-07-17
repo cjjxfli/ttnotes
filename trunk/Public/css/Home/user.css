@@ -1,0 +1,220 @@
+.sm-body-height {
+  min-height: 400px;
+}
+
+.md-body-height {
+  min-height: 650px;
+}
+
+.lg-body-height {
+  min-height: 900px;
+}
+
+.xlg-body-height {
+  min-height: 1100px;
+}
+
+.error {
+  color: red;
+}
+
+#img-verify {
+  width: 160px;
+  height: 40px;
+}
+
+#img-verify:hover {
+  cursor: pointer;
+}
+
+#img-verify-email {
+  width: 160px;
+  height: 40px;
+}
+
+#img-verify-email:hover {
+  cursor: pointer;
+}
+
+#login-form, #register-form {
+  margin-top: 40px;
+  padding-bottom: 60px;
+  height: 380px;
+}
+
+#login-form .btn-primary:hover, #register-form .btn-primary:hover {
+  background: #1bbc9b;
+}
+
+.user-row {
+  width: 100%;
+  min-width: 220px;
+  min-height: 700px;
+}
+
+.user-row .col-xs-2 {
+  padding-left: 0px;
+  margin-top: 3px;
+}
+
+.user-left-container {
+  background-color: #3a5371;
+}
+
+.user-left-container .user-left-bg {
+  background-color: #3a5371;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.user-left-container .breadcrumb a {
+  color: #ffffff;
+}
+
+.user-left-container ul {
+  list-style-type: none;
+  margin-left: 0px;
+}
+
+.user-left-container ul a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  min-width: 220px;
+}
+
+.user-left-container ul a:hover, .user-left-container ul a:active, .user-left-container ul a:focus {
+  color: #ffffff;
+  background-color: #1bbc9b;
+  width: 100%;
+  min-width: 220px;
+}
+
+.user-left-container .accordion {
+  width: 100%;
+  max-width: 360px;
+  min-width: 180px;
+  margin: 30px auto 20px;
+  background: #3a5371;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.user-left-container .accordion .link {
+  cursor: pointer;
+  display: block;
+  padding: 15px 15px 15px 42px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid #CCC;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.user-left-container .accordion li i {
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  font-size: 18px;
+  color: #ffffff;
+  transition: all 0.4s ease;
+}
+
+.user-left-container .accordion li .fa-chevron-down {
+  right: 12px;
+  left: auto;
+  font-size: 16px;
+}
+
+.user-left-container .accordion li:last-child link {
+  border-bottom: 0;
+}
+
+.user-left-container .accordion li .open {
+  margin-left: 0px;
+}
+
+.user-left-container .accordion li .open .link {
+  color: #ffffff;
+}
+
+.user-left-container .accordion li .open i {
+  color: #ffffff;
+}
+
+.user-left-container .accordion li .open .fa-chevron-down {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.user-left-container .accordion .submenu, .user-left-container .accordion ul {
+  display: none;
+  background: #3a5371;
+  font-size: 14px;
+  text-align: right;
+}
+
+.user-left-container .accordion .submenu li, .user-left-container .accordion ul li {
+  border-bottom: 1px solid #4b4a5e;
+  margin-left: 0px;
+}
+
+.user-left-container .accordion .submenu li a, .user-left-container .accordion ul li a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 100%;
+  max-width: 360px;
+  min-width: 170px;
+  text-decoration: none;
+  color: #ffffff;
+  padding-left: 1px;
+  margin-left: 0px;
+  transition: all 0.25s ease;
+}
+
+.user-left-container .accordion .submenu li a:hover, .user-left-container .accordion .submenu li a:active, .user-left-container .accordion .submenu li a:focus, .user-left-container .accordion ul li a:hover, .user-left-container .accordion ul li a:active, .user-left-container .accordion ul li a:focus {
+  background: #1bbc9b;
+  color: #ffffff;
+}
+
+.user-left-container .accordion .submenu .sub-link, .user-left-container .accordion ul .sub-link {
+  cursor: pointer;
+  display: block;
+  padding: 5px 5px 5px 32px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid #CCC;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.user-left-container .accordion .submenu .active, .user-left-container .accordion ul .active {
+  background: #1bbc9b;
+  color: #ffffff;
+}
+
+.user-left-container .my-row {
+  margin-bottom: 13px;
+}
+
+.user-left-container .my-row a {
+  color: #ffffff;
+  font-size: 20px;
+  width: 100%;
+  min-width: 220px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+.user-left-container .my-row a:hover, .user-left-container .my-row a:active {
+  background-color: #1bbc9b;
+  width: 100%;
+  min-width: 220px;
+}

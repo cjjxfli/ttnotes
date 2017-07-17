@@ -1,0 +1,638 @@
+/* Responsive styles
+================================================== */
+
+/* Large Devices, Wide Screens */
+@media (min-width : 1200px) {
+
+	.navbar-collapse{
+		padding-left: 0;
+	}
+
+	.nav-style-boxed .navbar-collapse{
+		padding-left: 15px;
+	}
+
+}
+
+
+/* Medium Devices, Desktops */
+@media (min-width: 992px) and (max-width:1199px){
+
+	.dropdown i{
+		display: none;
+	}
+
+	.navbar-collapse{
+		padding-left: 0;
+	}
+
+	.nav-style-boxed .navbar-collapse{
+		padding-left: 15px;
+	}
+
+	/* Header */
+
+	ul.navbar-nav > li{
+		padding: 0 15px;
+	}
+
+	ul.top-info li{
+		margin-left: 10px;
+	}
+
+	.consult{
+		padding: 6px 25px;
+	}
+
+	ul.top-info{
+		float: left;
+	}
+
+	/* Slideshow */
+
+	.slider-text{
+		position: relative;
+		z-index: 1;
+	}
+
+	.slider-img{
+		top: -95px;
+	}
+
+	/* Practice item */
+
+	.practice-item .img-thumb .overlay{
+		width: auto;
+		height: auto;
+		padding: 15px;
+	}
+
+	.practice-details{
+		overflow: hidden;
+    	text-overflow: ellipsis;
+    	display: block;
+    	max-height: 44px;
+	}
+
+	/* Case result */
+
+	.case-details-content .case-desc{
+		font-size: 14px;
+		line-height: normal;
+	}
+
+
+	/* Image block */
+
+	.img-block-left.ts-padding{
+		padding: 40px;
+	}
+
+
+	/* Bottom */
+
+	.contact-info-box .contact-info-box-content p{
+		word-wrap: break-word;
+		font-size: 12px;
+	}
+
+
+
+}
+
+/* Small Devices, Tablets */
+@media (min-width : 768px) and (max-width: 991px) {
+
+	/* Top bar */
+
+	.top-bar{
+		padding-bottom: 10px;
+		position: relative;
+		z-index: 10;
+	}
+
+	.top-menu ul{
+		text-align: left;
+	}
+
+	.top-menu ul li a{
+		padding: 0 10px;
+	}
+
+
+	/* Header */
+
+	.logo{
+		background: none;
+    	text-align: center;
+    	width: 100%;
+    	min-height: auto;
+	}
+
+	.logo:before, .logo:after {
+    	position: relative;
+	}	
+
+	.logo:after {
+    	border: 0;
+	}
+
+	.header-right {
+    	width: 100%;
+    	float: none;
+    	display: inline-block;
+	}
+
+	/* Header white */
+
+	.header-white .container{
+		padding-left: 0;
+	}
+
+	.header-white .logo{
+		margin-top: -11px;
+    	min-height: 65px;
+    	padding: 0 10px 10px 30px;
+	}
+
+	.header-white .logo img{
+    	height: 45px;
+    	background-size: contain;
+    	background-repeat: no-repeat;
+	}
+
+	.header-white ul.navbar-nav > li > a{
+		font-size: 13px;
+		line-height: 70px;
+		padding: 0 6px;
+	}
+
+	/* top info */
+
+	ul.top-info{
+		float: none;
+		margin: 0 0 60px;
+	}
+
+	ul.top-info li{
+		margin-left: 55px;
+	}
+	
+	/* Navigation */
+
+	.navbar-collapse{
+		padding-left: 0;
+	}
+
+	.nav-style-boxed .navbar-collapse{
+		padding-left: 15px;
+	}
+
+	ul.navbar-nav > li{
+		padding: 0 6px;
+	}
+
+	ul.navbar-nav > li > a, 
+	.dropdown-menu li a{
+		font-size: 14px;
+	}
+
+
+	/* Slideshow */
+	.slide-title{
+		font-size: 40px;
+		line-height: 60px;
+	}
+
+	.slide-sub-title{
+		font-size: 20px;
+		margin-bottom: 25px;
+	}
+
+	.slider.btn{
+		font-size: 12px;
+		padding: 10px 25px;
+	}
+
+	.slider-img{
+		left: 5%;
+	}
+
+	.slider-text{
+		padding-left: 35%;
+	}
+
+
+	/* Intro feature */
+	.intro-feature .col-sm-8{
+		width: 100%;
+	}
+
+	/* Product item */
+
+	.owl-theme.product-slide{
+		padding-left: 13px;
+	}
+
+	.product-item{
+		padding: 10px;
+	}
+
+	/* Tab */
+
+	.featured-tab .tab-pane img.pull-right{
+		margin-top: 10px;
+		float: none !important;
+	}
+
+	/* Content */
+
+	.ts-content .ts-padding.left {
+    	padding-left: 40px;
+	}
+
+	/* Facts */
+
+	.facts-wrapper .ts-facts {
+    	border: 0;
+	}
+
+	/* Latest post */
+
+	.latest-post{
+		margin-bottom: 30px;
+	}
+
+	/* Bottom */
+
+	.footer-widget{
+		display: inline-block;
+	}
+
+	.newsletter-form input{
+		width: 90%;
+	}
+
+	#back-to-top{
+		right: 20px;
+	}
+
+	
+
+
+}
+
+/* Small Devices Potrait */
+@media (max-width : 767px){
+
+	/* Top bar */
+
+	.top-social ul{
+		text-align: center;
+	}
+
+	.top-social li a{
+		font-size: 14px;
+	}
+
+	.top-menu ul{
+		text-align: center;
+	}
+
+	/* Header */
+
+	.logo{
+		min-height: auto;
+		padding: 20px 25px;
+		text-align: center;
+	}
+
+	.logo:after, .logo:before{
+		position: relative;
+		border: 0;
+	}
+
+	ul.top-info{
+		display: inline-block;
+		margin: 25px 0 20px 0;
+		float: none;
+	}
+
+	/* Header white */
+
+	.header-white{
+		position: relative;
+	}
+
+	.header-white .logo{
+		text-align: left;
+		min-height: 80px;
+	}
+
+	.header-white .logo img{
+    	height: 45px;
+    	background-size: contain;
+    	background-repeat: no-repeat;
+	}
+
+	.header-white .navbar-toggle{
+		position: absolute;
+    	top: 0;
+    	right: 20px;
+    	margin-top: 28px;
+    	z-index: 1;
+	}
+
+	.header-white .navbar-collapse{
+		margin-top: 15px;
+	}
+
+	.header-white ul.navbar-nav > li:first-child{
+		padding-left: 0;
+	}
+
+	.header-white ul.navbar-nav > li > a{
+		line-height: 50px;
+		padding-left: 25px;
+	}
+	
+	/* Navigation */
+
+	.navbar-fixed{
+		position: relative;
+	}
+
+	.site-nav-inner{
+		width: 100%;
+	}
+
+	.find-agent{
+		display: none;
+	}
+
+	.navbar-collapse{
+		background: #333333;
+	}
+
+	.navbar-collapse ul.navbar-nav > li > a{
+		color: #fff;
+	}
+
+	.dropdown-menu li a{
+		color: #fff;
+		border-bottom: 1px solid rgba(0,0,0,.3);
+	}
+
+	.navbar-nav .open .dropdown-menu>li{
+		padding-left: 25px;
+	}
+
+	.navbar-nav .open .dropdown-menu>li>a, 
+	.navbar-nav .open .dropdown-menu .dropdown-header{
+		padding: 5px 15px 10px 10px;
+	}
+
+	ul.navbar-nav > li{
+		display: block;
+		padding-left: 30px;
+	}
+
+	ul.navbar-nav > li:first-child{
+		padding-left: 30px;
+	}
+
+
+	ul.navbar-nav > li > a{
+		padding: 20px 0;
+	}
+
+	.navbar-nav .open .dropdown-menu>li>a {
+    	line-height: 30px;
+	}
+
+
+	/* Slideshow */
+
+	#main-slide .slider-content{
+		margin-top: -95px;
+	}
+
+	.slide-title{
+		font-size: 28px;
+    	line-height: 36px;
+    	margin-top: 10px;
+	}
+
+	.slide-sub-title{
+		font-size: 16px;
+		margin: 15px 0;
+	}
+
+	.slider.btn{
+		font-size: 12px;
+		padding: 10px 25px;
+	}
+
+	.slider-img{
+		left: 5%;
+	}
+
+	.slider-text{
+		padding-left: 35%;
+	}
+
+	/* Owl slideshow */
+
+	.owl-theme.box-slide .owl-pagination{
+		display: none;
+	}
+
+	.box-slider-text{
+		max-width: 360px;
+	}
+
+	.box-slide-title {
+   	font-size: 20px;
+    	margin-top: 0;
+    	line-height: normal;
+    	letter-spacing: -1px;
+	}
+
+	/* Tab */
+
+	.featured-tab .tab-pane img{
+		margin-bottom: 20px !important;
+	}
+
+	.featured-tab .nav-tabs>li>a{
+		border-right: 0;
+	}
+
+	/* Content */
+
+	.ts-content .ts-padding.left {
+    	padding-left: 40px;
+	}
+
+	.video-icon{
+		margin-left: -125px;
+	}
+
+	/* Facts */
+
+	.facts-wrapper .ts-facts {
+    	border: 0;
+	}
+
+	/* Latest post */
+
+	.latest-post{
+		margin-bottom: 30px;
+	}
+
+	/* Isotope */
+
+	.isotop-img-conatiner {
+    	position: relative;
+    	width: 361px;
+    	margin: 0 auto;
+	}
+
+	/* Bottom */
+
+	.footer-widget{
+		display: inline-block;
+	}
+
+	.footer-menu{
+		float: none;
+		text-align: center;
+		font-size: 12px;
+	}
+
+	.copyright-info{
+		text-align: center;
+	}
+
+	.newsletter-form input{
+		width: 90%;
+	}
+
+	#back-to-top{
+		right: 20px;
+	}
+
+	.call-action-all .action-btn{
+		float: left;
+		margin-top: 20px;
+	}
+
+	.partner-logo img{
+		display: inline-block;
+		text-align: center;
+	}
+
+
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media (max-width : 479px) {
+
+	/* Top bar */
+
+	.top-menu ul li a{
+		font-size: 12px;
+		padding: 0 6px;
+	}
+
+	/* Header */
+
+	ul.top-info{
+		margin-bottom: 0;
+	}
+
+	ul.top-info li .info-box span.info-icon{
+		font-size: 30px;
+	}
+
+	ul.top-info li .info-box .info-box-content{
+		margin-bottom: 20px;
+	}
+
+	ul.top-info li .info-box .info-box-content .info-box-title{
+		font-size: 12px;
+	}
+
+	ul.top-info li .info-box .info-box-content .info-box-subtitle{
+		font-size: 12px;
+	}
+
+
+	/* Slideshow */
+
+	#main-slide .item{
+		min-height: 350px;
+	}
+
+	.slider-img {
+    	top: 10px;
+    	width: 50%;
+	}
+
+	.slide-title{
+		line-height: 30px;
+	}
+
+	.slide-sub-title {
+    	margin: 10px 0;
+    	line-height: normal;
+	}
+
+	#main-slide .slider-content {
+    	margin-top: -105px;
+	}
+
+	#main-slide .carousel-control .fa-angle-left, 
+	#main-slide .carousel-control .fa-angle-right{
+		margin-top: -40px;
+	}
+
+	/* Owl slideshow */
+
+	.box-slide .item{
+		min-height: 400px;
+	}
+
+	/* Product */
+
+	.product-item{
+		padding-right: 10px;
+	}
+
+	/* Footer */
+
+	.footer-about{
+		padding-right: 15px;
+	}
+
+	.footer-menu ul li{
+		font-size: 10px;
+		padding-left: 4px;
+	}
+
+	#back-to-top {
+    	right: 5px;
+	}
+
+	
+
+
+}
+
+/* Custom, iPhone Retina */ 
+@media (max-width : 320px) and (max-width: 478px)  {
+
+
+
+}

@@ -1,0 +1,106 @@
+<extend name="Base/common"/>
+<block name="style">
+    <link rel="stylesheet" href="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader.css">
+    <link rel="stylesheet" href="__CSS__/Home/main.css">
+    <link rel="stylesheet" href="__CSS__/Home/main_notes.css">
+    <!--<link rel="stylesheet" href="__CSS__/Home/diskSystem.css">-->
+    <link rel="stylesheet" href="__CSS__/Home/cover.css">
+    <link rel="stylesheet" href="__CSS__/Home/alpha.css">
+    <link rel="stylesheet" href="__CSS__/Home/disk_header.css">
+    <link rel="stylesheet" href="__CSS__/Home/user.css">
+    <link rel="stylesheet" href="__CSS__/Home/menu.css">
+    <style type="text/css">
+        #circle-modal,#shCircle {
+            top: 300px;
+            left: 400px;
+        }
+    </style>
+
+</block>
+<block name="body">
+    <div class="container-fluid lg-body-container md-body-container">
+        <div class="row user-row">
+            <div class="col-xs-2">
+                <include file="Public/leftMenu"/>
+            </div>
+            <div class="col-xs-9">
+                <section class="panel">
+                    <section class="panel-body">
+                        <div class="frame-main container-fluid" id="layoutMain">
+                            <div>
+                                <div class="row">
+                                    <include file="Favorites/toolbar"/>
+                                </div>
+                                <div class="row">
+                                    <include file="Favorites/list"/>
+                                </div>
+                                <div class="row">
+                                    <!--<div id="shclFireballs"></div>-->
+                                    <include file="Public/shCircle"/>
+                                </div>
+                                <div class="row">
+                                    <div class="container">
+                                        <div class="modal fade" id="circle-modal" tabindex="-1" role="dialog" aria-labelledby="circle-modal-title" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header"><button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                        <h4 id="update-modal-label" class="modal-title">新建收藏</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="form">
+                                                            <form class="form-horizontal" action="{:U('Home/Favorites/addFavorites','',false)}/cid/{$category_cid}"
+                                                                  href-jump="{:U('Home/Favorites/index','',false)}/cid/{$category_cid}" data-cid="{$category_cid}" method="post" id="fav-add-form">
+                                                                <div class="form-group">
+                                                                    <label class="col-xs-3 control-label">收藏名称：</label>
+                                                                    <div class="col-xs-9">
+                                                                        <input type="text" class="form-control update-init-type" placeholder="收藏名称" id="fav-name" name="fav_name">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-xs-3 control-label">收藏链接：</label>
+                                                                    <div class="col-xs-9">
+                                                                        <input type="text" class="form-control update-init-type" placeholder="收藏链接" id="fav-link" name="fav_link">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-xs-3 control-label"></label>
+                                                                    <div class="col-xs-9">
+                                                                        <button type="submit" class="btn btn-primary form-control">添加</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <block name="script">
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
+        <!--circle load-->
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader-min.js"></script>
+        <script type="application/javascript">
+            $(function(){
+                var g_active_node = $(document);
+            });
+        </script>
+        <script type="application/javascript" src="__JS__/Home/myShCircle.js"></script>
+        <script type="application/javascript" src="__JS__/Home/user.js"></script>
+        <script type="application/javascript" src="__JS__/Home/bind.js"></script>
+        <script type="application/javascript" src="__JS__/Home/main_list.js"></script>
+        <script type="application/javascript" src="__JS__/Home/operate.js"></script>
+        <script type="application/javascript" src="__JS__/Home/dialog.js"></script>
+    </block>
+</block>

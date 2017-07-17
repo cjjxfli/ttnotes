@@ -1,0 +1,78 @@
+<extend name="Base/common"/>
+<block name="style">
+    <link rel="stylesheet" href="__CSS__/Home/main.css">
+    <link rel="stylesheet" href="__CSS__/Home/user.css">
+</block>
+<block name="title">
+    <title>{$article_info.title}</title>
+</block>
+<block name="body">
+    <div class="container-fluid lg-body-container md-body-container">
+        <div class="row user-row">
+            <div class="col-xs-2">
+                <include file="Public/leftMenu"/>
+            </div>
+            <div class="col-xs-9">
+                <section class="wrapper">
+                    <div class="container-fluid">
+                        <!--<div class="row text-left">-->
+                            <!--<div class="col-lg-12">-->
+                                <!--<a href="javascript:history.go(-1);" id="last-history" target="_self" class="btn btn-primary btn-round">-->
+                                    <!--<i class="fa fa-arrow-left"></i>返回-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="row">
+                            <div class="col-lg-11">
+                                <section class="panel">
+                                    <header class="panel-heading">
+                                        <h4 class="text-center">{$article_info.title}</h4>
+                                        <!--<span class="label label-primary"></span>-->
+                                       <!--<span class="tools pull-right">-->
+                                       <!--<a href="javascript:;" class="fa fa-chevron-down"></a>-->
+                                       <!--</span>-->
+                                    </header>
+                                    <section class="panel-body">
+
+                                        <script id="extra-editor" name="extra_editor" type="text/plain">
+{$article_info.content}
+                                        </script>
+                                    </section>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
+    <script type="application/javascript" src="__JS__/Home/user.js"></script>
+    <script type="application/javascript" src="__JS__/Home/bind.js"></script>
+    <script src="__UE__/ueditor.config.js"></script>
+    <script src="__UE__/ueditor.all.js"></script>
+    <script src="__UE__/lang/zh-cn/zh-cn.js"></script>
+    <!--circle load-->
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader-min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            window.UEDITOR_HOME_URL = UE;  //UEDITOR_HOME_URL、config、all这三个顺序不能改变
+            window.onload=function(){
+                window.UEDITOR_CONFIG.initialFrameHeight = 600;//编辑器的高度
+                window.UEDITOR_CONFIG.imageUrl = UE_UPLOAD + "/ue_upload_img";          //图片上传提交地址
+                window.UEDITOR_CONFIG.imagePath = UE_UPLOAD + "/Thumb";//编辑器调用图片的地址
+            };
+            UE.getEditor('extra-editor',{
+                toolbars:[
+                        []
+                ]
+            });
+        });
+    </script>
+    <script type="application/javascript" src="__JS__/Home/myShCircle.js"></script>
+    <script type="application/javascript" src="__JS__/Home/user.js"></script>
+    <script type="application/javascript" src="__JS__/Home/bind.js"></script>
+    <script type="application/javascript" src="__JS__/Home/main_list.js"></script>
+    <script type="application/javascript" src="__JS__/Home/operate.js"></script>
+</block>
