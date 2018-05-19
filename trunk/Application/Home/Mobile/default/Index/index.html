@@ -1,4 +1,4 @@
-<!--<extend name="Base/common"/>-->
+<extend name="Base/common"/>
 <block name="style">
     <link rel="stylesheet" href="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader.css">
     <link rel="stylesheet" href="__CSS__/Home/main.css">
@@ -34,6 +34,14 @@
 </block>
 <block name="body">
     <div class="container-fluid lg-body-container md-body-container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#">我的笔记本</a></li>
+                    <li><a href="{:U('Home/Favorites/index','',false)}/cid/-1">我的收藏夹</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="row user-row">
             <div class="col-sm-12">
                 <include file="Index/list"/>
