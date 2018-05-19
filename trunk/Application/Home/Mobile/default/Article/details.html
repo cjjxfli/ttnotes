@@ -22,17 +22,24 @@
             left: 13px;
             top: 10px;
         }
+        #article-context{
+            margin-right: 3px;
+            margin-left: 3px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
     </style>
 </block>
 <block name="title">
     <title>{$article_info.title}</title>
 </block>
 <block name="body">
-    <div class="container-fluid lg-body-container md-body-container">
-        <div class="row user-row" style="padding:0px!important">
+    <div class="container-fluid lg-body-container md-body-container" style="padding:0px!important">
+        <div class="row" style="padding:0px!important">
             <div class="col-sm-12" style="padding:0px!important">
                     <h4 class="text-center">{$article_info.title}</h4>
-                <script id="extra-editor" name="extra_editor" type="text/plain">
+                <div id="article-context"></div>
+                    <script id="extra-editor" name="extra_editor" type="text/plain">
 {$article_info.content}
                 </script>
             </div>
@@ -49,17 +56,24 @@
     <script type="application/javascript" src="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader-min.js"></script>
     <script type="text/javascript">
         $(function(){
-            window.UEDITOR_HOME_URL = UE;  //UEDITOR_HOME_URL、config、all这三个顺序不能改变
-            window.onload=function(){
-                window.UEDITOR_CONFIG.initialFrameHeight = 600;//编辑器的高度
-                window.UEDITOR_CONFIG.imageUrl = UE_UPLOAD + "/ue_upload_img";          //图片上传提交地址
-                window.UEDITOR_CONFIG.imagePath = UE_UPLOAD + "/Thumb";//编辑器调用图片的地址
-            };
-            UE.getEditor('extra-editor',{
-                toolbars:[
-                        []
-                ]
+            // 实例化编辑器
+            var ue = UE.getEditor('extra-editor');
+
+//            window.UEDITOR_HOME_URL = UE;  //UEDITOR_HOME_URL、config、all这三个顺序不能改变
+//            window.onload=function(){
+//                window.UEDITOR_CONFIG.initialFrameHeight = 700;//编辑器的高度
+//                window.UEDITOR_CONFIG.imageUrl = UE_UPLOAD + "/ue_upload_img";          //图片上传提交地址
+//                window.UEDITOR_CONFIG.imagePath = UE_UPLOAD + "/Thumb";//编辑器调用图片的地址
+//            };
+            //异步回调
+            ue.ready(function() {
+                ue.setHide();
+                var html = ue.getContent();
+                $("#article-context").html(html);
+                $("div img").addClass('img-responsive');
             });
+            //var ue = UE.getEditor('extra-editor');
+            //ue.setDisabled();
         });
     </script>
     <script type="application/javascript" src="__JS__/Home/myShCircle.js"></script>

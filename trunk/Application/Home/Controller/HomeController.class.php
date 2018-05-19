@@ -21,8 +21,8 @@ class HomeController extends Controller{
         $return_data = session("user_data");
         $user_id = session("user_id");
         if(empty($user_id)){
-            $user_id = 1;
-            session("user_id",1);
+            $user_id = 2;
+            session("user_id",2);
         }
         if(IS_POST){
             if(!in_array(ACTION_NAME,C(ALLOW_VISIT_WITHOUT_LOGIN))){

@@ -53,10 +53,10 @@ return array(
     'THINK_EMAIL' => array(
         'SMTP_HOST'   => 'smtp.exmail.qq.com', //SMTP服务器
         'SMTP_PORT'   => '465', //SMTP服务器端口
-        'SMTP_USER'   => '', //SMTP服务器用户名
-        'SMTP_PASS'   => '', //SMTP服务器密码
-        'FROM_EMAIL'  => '', //发件人EMAIL
-        'FROM_NAME'   => 'ttnotes', //发件人名称
+        'SMTP_USER'   => '540331240@toubao.mtaotop.com', //SMTP服务器用户名
+        'SMTP_PASS'   => 'Xfli181018', //SMTP服务器密码
+        'FROM_EMAIL'  => '540331240@toubao.mtaotop.com', //发件人EMAIL
+        'FROM_NAME'   => 'toubao', //发件人名称
         'REPLY_EMAIL' => '', //回复EMAIL（留空则为发件人EMAIL）
         'REPLY_NAME'  => '', //回复名称（留空则为发件人名称）
     ),

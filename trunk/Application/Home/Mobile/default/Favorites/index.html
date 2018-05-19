@@ -1,4 +1,4 @@
-<extend name="Base/common"/>
+<!--<extend name="Base/common"/>-->
 <block name="style">
     <link rel="stylesheet" href="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader.css">
     <link rel="stylesheet" href="__CSS__/Home/main.css">
@@ -14,12 +14,32 @@
             top: 300px;
             left: 400px;
         }
+        .footer {
+            background: #25272e;
+            color: #87888a;
+            font-size: 14px;
+            position: relative;
+            padding: 5px 0 5px;
+        }
+        .module-list-view .list-view-item .fileicon {
+            cursor: default;
+            height: 26px;
+            width: 26px;
+            position: absolute;
+            left: 13px;
+            top: 10px;
+        }
     </style>
 
 </block>
 <block name="body">
     <div class="container-fluid lg-body-container md-body-container">
         <div class="row user-row">
+            <div class="col-sm-12">
+                <include file="Favorites/list"/>
+            </div>
+        </div>
+ <!--       <div class="row user-row">
             <div class="col-xs-2">
                 <include file="Public/leftMenu"/>
             </div>
@@ -35,7 +55,7 @@
                                     <include file="Favorites/list"/>
                                 </div>
                                 <div class="row">
-                                    <!--<div id="shclFireballs"></div>-->
+                                    &lt;!&ndash;<div id="shclFireballs"></div>&ndash;&gt;
                                     <include file="Public/shCircle"/>
                                 </div>
                                 <div class="row">
@@ -84,7 +104,7 @@
                 </section>
 
             </div>
-        </div>
+        </div>-->
     </div>
     <block name="script">
         <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
