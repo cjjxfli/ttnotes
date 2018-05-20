@@ -1,31 +1,27 @@
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<title>{$title}</title>
-<link href="__CSS__/Admin/css/bootstrap.min.css" rel="stylesheet">
-<link href="__CSS__/Admin/css/bootstrap-reset.css" rel="stylesheet">
-<link href="__CSS__/Admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME ICON CSS -->
-<link rel="stylesheet" type="text/css" href="__CSS__/Admin/assets/fuelux/css/tree-style.css"><!-- TREE STYLE CSS -->
-<link rel="stylesheet" href="__CSS__/Admin/css/style.css">
-<link rel="stylesheet" href="__CSS__/Admin/css/style-responsive.css">
-<link rel="stylesheet" href="__CSS__/Admin/main.min.css">
-<link rel="stylesheet" href="__CSS__/Common/pagination.min.css">
-<link rel="stylesheet" type="text/css" href="__JS__/Admin/assets/bootstrap-fileupload/bootstrap-fileupload.css"><!-- BOOTSTRAP FILEUPLOAD PLUGIN CSS -->
-<link rel="stylesheet" type="text/css" href="__JS__/Admin/assets/bootstrap-datepicker/css/datepicker.css"><!-- BOOTSTRAP DATEPICKER PLUGIN CSS -->
-<link rel="stylesheet" type="text/css" href="__JS__/Admin/assets/bootstrap-timepicker/compiled/timepicker.css"><!-- BOOTSTRAP TIMEPICKER PLUGIN CSS -->
-<link rel="stylesheet" type="text/css" href="__JS__/Admin/assets/bootstrap-colorpicker/css/colorpicker.css"><!-- BOOTSTRAP COLORPICKER PLUGIN CSS -->
-<link rel="stylesheet" type="text/css" href="__JS__/Admin/assets/bootstrap-daterangepicker/daterangepicker-bs3.css"><!-- DATERANGE PLUGIN CSS -->
-<link rel="stylesheet" type="text/css" href="__JS__/Admin/assets/bootstrap-datetimepicker/css/datetimepicker.css"><!-- DATETIMEPICKER PLUGIN CSS -->
-<link rel="stylesheet" type="text/css" href="__JS__/Admin/assets/jquery-multi-select/css/multi-select.css"><!-- JQUERY MULTI SELECT PLUGIN CSS -->
-<link rel="stylesheet" href="__LIB__/Common/shCircle/jquery.shCircleLoader.css">
-<!--[if lt IE 9]>
-<script src="__JS__/Admin/js/html5shiv.js">
-</script>
-<script src="__JS__/Admin/js/respond.min.js">
-</script>
-<![endif]-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
+
+<link href="__LIB__/Common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="__LIB__/Common/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">-->
+<!-- Template styles-->
+<link rel="stylesheet" href="__LIB__/Home/other/css/style.css">
+<!-- Responsive styles-->
+<link rel="stylesheet" href="__LIB__/Home/other/css/responsive.css">
+<!-- FontAwesome -->
+<link rel="stylesheet" href="__LIB__/Home/other/css/font-awesome.min.css">
+<!-- Animation -->
+<link rel="stylesheet" href="__LIB__/Home/other/css/animate.css">
+<!-- Owl Carousel -->
+<link rel="stylesheet" href="__LIB__/Home/other/css/owl.carousel.css">
+<link rel="stylesheet" href="__LIB__/Home/other/css/owl.theme.css">
+<!-- Colorbox -->
+<link rel="stylesheet" href="__LIB__/Home/other/css/colorbox.css">
 <block name="style">
 
+</block>
+<block name="title">
+    <title>{$title}</title>
 </block>
 
 <script type="text/javascript">
@@ -36,38 +32,21 @@
     var CSS = "__CSS__";
     var UE = "__UE__/";
     var UE_UPLOAD = "__UE_UPLOAD__";
-    var UPLOADIFY = "__UPLOADIFY__";
-    var WEB_ROOT = "__ROOT__";
-    window.UEDITOR_HOME_URL = UE;  //UEDITOR_HOME_URL、config、all这三个顺序不能改变
-//    window.onload=function(){
-//        window.UEDITOR_CONFIG.initialFrameHeight = 300;//编辑器的高度
-//        window.UEDITOR_CONFIG.imageUrl = "{:U('Admin/Upload/ue_upload_img')}";          //图片上传提交地址
-//        window.UEDITOR_CONFIG.imagePath = UE_UPLOAD + "/Thumb";//编辑器调用图片的地址
-//    };
 </script>
 <script src="__LIB__/Common/jquery/jquery-2.2.3.min.js"></script>
 <script src="__LIB__/Common/bootstrap/js/bootstrap.min.js"></script>
-<script src="__JS__/Admin/js/jquery.dcjqaccordion.2.7.js"></script><!-- ACCORDIN JS -->
-<script src="__JS__/Admin/js/jquery.scrollTo.min.js" ></script><!-- SCROLLTO JS -->
-<script src="__JS__/Admin/js/jquery.nicescroll.js" ></script><!-- NICESCROLL JS -->
-<script src="__JS__/Admin/js/respond.min.js" ></script><!-- RESPOND JS -->
-<script src="__JS__/Admin/js/jquery.sparkline.js"></script><!-- SPARKLINE JS -->
-<script src="__JS__/Admin/js/sparkline-chart.js"></script><!-- SPARKLINE CHART JS -->
-<script src="__JS__/Admin/js/common-scripts.js"></script><!-- BASIC COMMON JS -->
-<script src="__JS__/Admin/js/count.js"></script><!-- COUNT JS -->
-<script src="__JS__/Admin/assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script><!-- BOOTSTRAP DATEPICKER JS  -->
-<script src="__JS__/Admin/assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script><!-- BOOTSTRAP DATETIMEPICKER JS  -->
-<script src="__JS__/Admin/assets/bootstrap-daterangepicker/moment.min.js"></script>
-<script src="__JS__/Admin/assets/bootstrap-daterangepicker/daterangepicker.js"></script><!-- BOOTSTRAP DATERANGEPICKER JS  -->
-<script src="__JS__/Admin/assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script><!-- BOOTSTRAP TIMEPICKER JS  -->
-<script src="__JS__/Admin/assets/bootstrap-daterangepicker/daterangepicker.js"></script><!-- BOOTSTRAP DATERANGEPICKER JS  -->
-<script src="__JS__/Admin/assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"> </script><!-- BOOTSTRAP COLORPICKER JS  -->
-<script src="__JS__/Admin/assets/jquery-multi-select/js/jquery.multi-select.js"></script><!-- BOOTSTRAP MULTISELECT JS  -->
-<script src="__JS__/Admin/assets/jquery-multi-select/js/jquery.quicksearch.js"></script><!-- BOOTSTRAP MULTISELECT JS  -->
-<script src="__JS__/Admin/advanced-form-components.js" ></script><!-- ADVANCE FORM COMPONENTS PAGE JS  -->
-<script src="__CSS__/Admin/assets/fuelux/js/tree.min.js"></script><!-- TREE JS  -->
-<script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.md5.js"></script>
-<script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
-<script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
-<script type="application/javascript" src="__LIB__/Common/shCircle/js/jquery.shCircleLoader-min.js"></script>
+<!--<script src="__LIB__/Common/requirejs/require.js"></script>-->
+<!-- Owl Carousel -->
+<!--<script type="text/javascript" src="__LIB__/Home/other/js/owl.carousel.min.js"></script>-->
+<!--&lt;!&ndash; Counter &ndash;&gt;-->
+<!--<script type="text/javascript" src="__LIB__/Home/other/js/jquery.counterup.min.js"></script>-->
+<!--&lt;!&ndash; Waypoints &ndash;&gt;-->
+<!--<script type="text/javascript" src="__LIB__/Home/other/js/waypoints.min.js"></script>-->
+<!--&lt;!&ndash; Color box &ndash;&gt;-->
+<!--<script type="text/javascript" src="__LIB__/Home/other/js/jquery.colorbox.js"></script>-->
+<!--&lt;!&ndash; Isotope &ndash;&gt;-->
+<!--<script type="text/javascript" src="__LIB__/Home/other/js/isotope.js"></script>-->
+<!--<script type="text/javascript" src="__LIB__/Home/other/js/ini.isotope.js"></script>-->
+<!--&lt;!&ndash; Template custom &ndash;&gt;-->
+<!--<script type="text/javascript" src="__LIB__/Home/other/js/custom.js"></script>-->
 <block name="script"></block>

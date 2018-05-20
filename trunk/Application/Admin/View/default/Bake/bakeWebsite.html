@@ -1,0 +1,58 @@
+<extend name="Base/common"/>
+<block name="style">
+    <link rel="stylesheet" href="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader.css">
+    <link rel="stylesheet" href="__CSS__/Home/main.css">
+    <link rel="stylesheet" href="__CSS__/Home/main_notes.css">
+    <!--<link rel="stylesheet" href="__CSS__/Home/diskSystem.css">-->
+    <link rel="stylesheet" href="__CSS__/Home/cover.css">
+    <link rel="stylesheet" href="__CSS__/Home/alpha.css">
+    <link rel="stylesheet" href="__CSS__/Home/disk_header.css">
+    <link rel="stylesheet" href="__CSS__/Home/user.css">
+    <link rel="stylesheet" href="__CSS__/Home/menu.css">
+    <style type="text/css">
+        #circle-modal,#shCircle {
+            top: 300px;
+            left: 400px;
+        }
+    </style>
+
+</block>
+<block name="body">
+    <div class="container-fluid lg-body-container md-body-container">
+        <div class="col-xs-2">
+            <include file="Public/leftMenu"/>
+        </div>
+        <div class="col-xs-10">
+            <h1>备份网站</h1>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
+    <!--circle load-->
+    <script type="application/javascript" src="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader-min.js"></script>
+    <script type="application/javascript">
+        $(function(){
+            var g_active_node = $(document);
+            $('#shclFireballs').shCircleLoader({
+                color: "red",
+                dots: 24,
+                dotsRadius: 13,
+                keyframes:
+                        "0%   {background: red;    {prefix}transform: scale(1)}\
+                         20%  {background: orange; {prefix}transform: scale(.4)}\
+                         40%  {background: red;    {prefix}transform: scale(0)}\
+                         50%  {background: red;    {prefix}transform: scale(1)}\
+                         70%  {background: orange; {prefix}transform: scale(.4)}\
+                         90%  {background: red;    {prefix}transform: scale(0)}\
+                         100% {background: red;    {prefix}transform: scale(1)}"
+            });
+        });
+    </script>
+    <script type="application/javascript" src="__JS__/Home/myShCircle.js"></script>
+    <script type="application/javascript" src="__JS__/Home/user.js"></script>
+    <script type="application/javascript" src="__JS__/Home/bind.js"></script>
+    <script type="application/javascript" src="__JS__/Home/main_list.js"></script>
+    <script type="application/javascript" src="__JS__/Home/operate.js"></script>
+</block>

@@ -1,0 +1,18 @@
+<extend name="Base/common"/>
+<block name="style"></block>
+<block name="body">
+    <div class="container md-body-container">
+        <if condition="$active_info.flag eq 1">
+            <p class="text-center h4">{$active_info.msg}</p>
+            <div class="text-info text-center">
+                <a href="{:U('Home/User/login')}" class="btn btn-primary btn-lg" target="_self">登录</a>
+            </div>
+            <else/>
+            <p class="text-center h4">{$active_info.msg}</p>
+            <div class="text-info text-center">
+                <a href="{:U('Home/User/register')}" class="btn btn-primary btn-lg" target="_self">注册</a>
+            </div>
+        </if>
+    </div>
+</block>
+<block name="script"></block>

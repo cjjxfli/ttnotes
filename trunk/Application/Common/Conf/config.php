@@ -15,6 +15,7 @@ return array(
     /* 模块相关配置 */
     //'AUTOLOAD_NAMESPACE' => array('Addons' => ONETHINK_ADDON_PATH), //扩展模块列表
     'DEFAULT_MODULE'     => 'Home',
+    'MODULE_ALLOW_LIST'      => array('Home','Admin'), //允许访问列表
 
     /* 系统数据加密设置 */
     'DATA_AUTH_KEY' => '~t/f@u^B!x253}o?NH<#0rke)RsDqKX|]$TCw%jU', //默认数据加密KEY
