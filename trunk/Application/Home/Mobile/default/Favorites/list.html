@@ -26,58 +26,12 @@
             </ul>
         </notempty>
     </div>
-    <div class="list-view-header">
-        <div class="list-header">
-            <ul class="list-cols" node-type="cols">
-                <li data-key="name" class="col first-col" style="width:60%;">
-                    <div node-type="check" class="col-item check">
-                        <span class="check-icon"></span>
-                        <span class="check-all-text">全选</span>
-                        <span class="icon checksmall"></span>
-                    </div>
-                    <span class="text">文件名</span>
-                    <span class="order-icon"></span>
-                    <span class="icon up-icon icon-up"></span>
-                    <span class="icon downtitle-icon icon-downtitle"></span>
-                </li>
-                <li data-key="size" class="col" style="width:16%;">
-                    <span class="text">文件个数</span>
-                    <span class="order-icon"></span>
-                    <span class="icon up-icon icon-up"></span>
-                    <span class="icon downtitle-icon icon-downtitle"></span>
-                </li>
-                <li data-key="time" class="col last-col descend" style="width:24%;">
-                    <span class="text">修改日期</span>
-                    <span class="order-icon"></span>
-                    <span class="icon up-icon icon-up"></span>
-                    <span class="icon downtitle-icon icon-downtitle"></span>
-                </li>
-            </ul>
-            <ul class="grid-cols" node-type="cols" style="display: none;">
-                <li class="col first-col">
-                    <div node-type="check" class="col-item check">
-                        <span class="check-icon"></span>
-                        <span class="check-all-text">全选</span>
-                        <span class="icon checksmall icon-checksmall"></span>
-                    </div>
-                </li>
-            </ul>
-            <div class="list-header-operatearea global-clearfix">
-                <span class="count-tips">已选中0个文件/文件夹</span>
-                <div class="list-header-operate">
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="list-view-container" style="">
         <div node-type="module-list-view" class="module-list-view" id="module-list" style="overflow-y: auto; height: 778px;">
             <div class="list-view" style="height: auto;">
                 <notempty name="favorites_category_info">
                     <volist name="favorites_category_info" id="vol">
                         <dd class="g-clearfix list-view-item open-enable favorites-cat" _position="{$vol.id}" _cmd_installed="{$vol.id}" _installed="{$vol.id}">
-                            <span node-type="checkbox" class="checkbox">
-                            <span class="icon checksmall"></span>
-                            </span>
                             <div class="fileicon dir-small">
                             </div>
                             <div class="file-name" style="width:60%">
@@ -88,9 +42,6 @@
                                     <div class="button-box-mark" style="display:inline-block;*display:inline;*zoom:1;width:1px;height:1px;line-height:0;">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="file-size" style="width:16%">
-                               - - <!--{$vol.files_include}-->
                             </div>
                             <div class="ctime" style="width:24%">
                                 {$vol.last_update_time}
@@ -105,7 +56,6 @@
                 <notempty name="favorites_info">
                     <volist name="favorites_info" id="vol">
                         <dd class="g-clearfix list-view-item open-enable favorites" _position="{$vol.id}" _cmd_installed="{$vol.id}" _installed="{$vol.id}">
-                            <span node-type="checkbox" class="checkbox"><span class="icon checksmall"></span></span>
                             <!--text file icon-->
                             <!--<div class="fileicon fileicon-small-txt">-->
                             <!--</div>-->
@@ -191,9 +141,6 @@
     <!--begin dir-module-->
     <div id="dir-module" style="display: none;">
         <dd class="g-clearfix list-view-item open-enable" _position="0" _cmd_installed="1" _installed="1">
-            <span node-type="checkbox" class="checkbox">
-                <span class="icon checksmall"></span>
-            </span>
             <div class="fileicon dir-small">
             </div>
             <div class="file-name" style="width:60%">

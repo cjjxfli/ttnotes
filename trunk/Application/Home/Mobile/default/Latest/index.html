@@ -1,0 +1,178 @@
+<extend name="Base/common"/>
+<block name="style">
+    <link rel="stylesheet" href="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader.css">
+    <link rel="stylesheet" href="__CSS__/Home/main.css">
+    <link rel="stylesheet" href="__CSS__/Home/main_notes.css">
+    <!--<link rel="stylesheet" href="__CSS__/Home/diskSystem.css">-->
+    <link rel="stylesheet" href="__CSS__/Home/cover.css">
+    <link rel="stylesheet" href="__CSS__/Home/alpha.css">
+    <link rel="stylesheet" href="__CSS__/Home/disk_header.css">
+    <link rel="stylesheet" href="__CSS__/Home/user.css">
+    <link rel="stylesheet" href="__CSS__/Home/menu.css">
+    <style type="text/css">
+        #circle-modal,#shCircle {
+            top: 300px;
+            left: 400px;
+        }
+        .footer {
+            background: #25272e;
+            color: #87888a;
+            font-size: 14px;
+            position: relative;
+            padding: 5px 0 5px;
+        }
+        .module-list-view .list-view-item .fileicon {
+            cursor: default;
+            height: 26px;
+            width: 26px;
+            position: absolute;
+            left: 13px;
+            top: 10px;
+        }
+
+        #post_list .post_item_summary {
+            line-height: 1.8em;
+            margin-bottom: 5px;
+            color: #333;
+            overflow: hidden;
+            padding-right: 1px;
+            font-size: 12px;
+            padding-top: 5px;
+        }
+        .post_item_body {
+            margin-left: 2px;
+            padding-top: 1px;
+            line-height: 150%;
+        }
+        .post_item {
+            border-bottom: 1px dotted #ccc;
+            border-width: 1px;
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+        }
+        .post_item_foot {
+            color: #555;
+            padding-top: 5px;
+            margin-left: 2px;
+            line-height: 150%;
+        }
+        #post_list .article_comment {
+            background: transparent url("__PUBLIC__/img/Home/icon_comment.gif") no-repeat scroll 0 0;
+            padding-left: 1px;
+            padding-right: 1px;
+            margin-left: 2px;
+        }
+        #post_list .article_view {
+            background: transparent url("__PUBLIC__/img/Home/icon_arrow.gif") no-repeat scroll 0 0;
+            padding-left: 2px;
+            padding-right: 1px;
+            margin-left: 1px;
+        }
+        a.lightblue:link, a.lightblue:active, a.lightblue:visited {
+            color: #005a94;
+            text-decoration: none;
+        }
+        a:link, a:visited, a:active {
+            color: #015fb6;
+        }
+        a:link, a:visited, a:active {
+            color: #015fb6;
+        }
+        a {
+            outline: 0;
+        }
+
+        .pages a,.pages span {
+            display:inline-block;
+            padding:2px 5px;
+            margin:0 1px;
+            border:1px solid #f0f0f0;
+            -webkit-border-radius:3px;
+            -moz-border-radius:3px;
+            border-radius:3px;
+        }
+        .pages a,.pages li {
+            display:inline-block;
+            list-style: none;
+            text-decoration:none; color:#58A0D3;
+        }
+        .pages a.first,.pages a.prev,.pages a.next,.pages a.end{
+            margin:0;
+        }
+        .pages a:hover{
+            border-color:#50A8E6;
+        }
+        .pages span.current{
+            background:#50A8E6;
+            color:#FFF;
+            font-weight:700;
+            border-color:#50A8E6;
+        }
+
+    </style>
+
+</block>
+<block name="body">
+    <div class="container-fluid lg-body-container md-body-container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#">我的笔记本</a></li>
+                    <li><a href="{:U('Home/Favorites/index','',false)}/cid/-1">我的收藏夹</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row user-row">
+            <div class="col-xs-12">
+                <section class="panel">
+                    <!--<section class="panel-heading">-->
+                    <!--<h4 class="text-center">我的笔记本</h4>-->
+                    <!--</section>-->
+                    <section class="panel-body">
+                        <div class="frame-main container-fluid" id="layoutMain" style="overflow: hidden">
+                            <div>
+                                <div class="row">
+                                    <include file="Latest/list"/>
+                                </div>
+                                <!--<div class="row">-->
+                                    <!--&lt;!&ndash;<div id="shclFireballs"></div>&ndash;&gt;-->
+                                    <!--<include file="Public/shCircle"/>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <block name="script">
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/jquery.validate.min.js"></script>
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/messages_zh.js"></script>
+        <!--circle load-->
+        <script type="application/javascript" src="__LIB__/Common/jquery/plugin/shCircleLoader/jquery.shCircleLoader-min.js"></script>
+        <script type="application/javascript">
+            $(function(){
+                var g_active_node = $(document);
+                $('#shclFireballs').shCircleLoader({
+                    color: "red",
+                    dots: 24,
+                    dotsRadius: 13,
+                    keyframes:
+                            "0%   {background: red;    {prefix}transform: scale(1)}\
+                             20%  {background: orange; {prefix}transform: scale(.4)}\
+                             40%  {background: red;    {prefix}transform: scale(0)}\
+                             50%  {background: red;    {prefix}transform: scale(1)}\
+                             70%  {background: orange; {prefix}transform: scale(.4)}\
+                             90%  {background: red;    {prefix}transform: scale(0)}\
+                             100% {background: red;    {prefix}transform: scale(1)}"
+                });
+            });
+        </script>
+        <script type="application/javascript" src="__JS__/Home/myShCircle.js"></script>
+        <script type="application/javascript" src="__JS__/Home/user.js"></script>
+        <script type="application/javascript" src="__JS__/Home/bind.js"></script>
+        <script type="application/javascript" src="__JS__/Home/main_list.js"></script>
+        <script type="application/javascript" src="__JS__/Home/operate.js"></script>
+    </block>
+</block>

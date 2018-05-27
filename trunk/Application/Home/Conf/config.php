@@ -16,6 +16,7 @@ return array(
     'DEFAULT_THEME' =>  'default',  // 默认模板主题名称
 	'TMPL_ACTION_SUCCESS'=>'Public:dispatch_jump',
 	'TMPL_ACTION_ERROR'=>'Public:dispatch_jump',
+		'DEFAULT_CONTROLLER' => 'Latest',
 
 	/* SESSION 和 COOKIE 配置 */
     'SESSION_PREFIX' => 'smartweb_home', //session前缀

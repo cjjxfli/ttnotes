@@ -28,8 +28,9 @@ class Page{
         'header' => '<span class="rows">共 %TOTAL_ROW% 条记录</span>',
         'prev'   => '<<',
         'next'   => '>>',
-        'first'  => '1...',
-        'last'   => '...%TOTAL_PAGE%',
+        'first'  => '首页',
+        //'last'   => '...%TOTAL_PAGE%',
+        'last'   => '末页',
         'theme'  => '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END%',
     );
 
@@ -89,7 +90,7 @@ class Page{
         /* 计算分页零时变量 */
         $now_cool_page      = $this->rollPage/2;
 		$now_cool_page_ceil = ceil($now_cool_page);
-		$this->lastSuffix && $this->config['last'] = $this->totalPages;
+		//$this->lastSuffix && $this->config['last'] = $this->totalPages;
 
         //上一页
         $up_row  = $this->nowPage - 1;

@@ -1,0 +1,92 @@
+<div node-type="module-list" class="module-list" style="min-height: 800px;height: auto">
+    <div class="list-view-container" style="">
+        <div node-type="module-list-view" class="module-list-view" id="module-list" style="overflow-y: hidden; height: 778px;">
+                <notempty name="category_info_a">
+                    <volist name="category_info_a" id="vol">
+                        <div class="list-view" id="post_list" style="height: auto;">
+                            <div class="post_item">
+                                <div class="post_item_body">
+                                    <h3>
+                                        <a class="titlelnk" href="{:U('Home/Article/openArticle','',false)}/aid/{$vol.id}" target="_blank">{$vol.title_article}</a>
+                                    </h3>
+                                    <p class="post_item_summary">
+                                        {$vol.title_article} ...
+                                    </p>
+                                    <div class="post_item_foot">
+                                        <a href="{:U('Home/Article/openArticle','',false)}/aid/{$vol.id}" class="lightblue">{$vol.user_login}</a>
+                                        发布于 {$vol.create_category_time}
+                                        <span class="category-tag gray">分类：{$vol.name}</span>
+                                        <!--<span class="article_comment">-->
+                                        <!--<a href="{:U('Home/Article/openArticle','',false)}/aid/{$vol.id}" title="" class="gray">评论(0)</a>-->
+                                        <!--</span>-->
+                                        <!--<span class="article_view">-->
+                                        <!--<a href="{:U('Home/Article/openArticle','',false)}/aid/{$vol.id}" class="gray">阅读(83)</a>-->
+                                        <!--</span>-->
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </volist>
+                    <else/>
+                </notempty>
+                <notempty name="article_info_a">
+                    <volist name="article_info_a" id="vol">
+                        <div class="post_item">
+                            <div class="post_item_body">
+                                <h3>
+                                    <a class="titlelnk" href="{$vol.fav_url}" target="_blank">{$vol.fav_title}</a>
+                                </h3>
+                                <p class="post_item_summary">
+                                    {$vol.fav_title} ...
+                                </p>
+                                <div class="post_item_foot">
+                                    <a href="{:U('Home/Article/openArticle','',false)}/aid/{$vol.id}" class="lightblue">{$vol.user_login}</a>
+                                    收藏于 {$vol.create_category_time}
+                                    <span class="category-tag gray">分类：{$vol.name}</span>
+                                    <!--<span class="article_comment">-->
+                                    <!--<a href="{:U('Home/Article/openArticle','',false)}/aid/{$vol.id}" title="" class="gray">评论(0)</a>-->
+                                    <!--</span>-->
+                                    <!--<span class="article_view">-->
+                                    <!--<a href="{:U('Home/Article/openArticle','',false)}/aid/{$vol.id}" class="gray">阅读(83)</a>-->
+                                    <!--</span>-->
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </volist>
+                </notempty>
+            <div class="pages">
+                {$page}
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-view-container" style="display: none;">
+        <div node-type="module-grid-view" class="module-grid-view" style="height: 278px;">
+            <div class="grid-view">
+            </div>
+        </div>
+    </div>
+    <!--<empty name="category_info">-->
+        <!--<empty name="article_info">-->
+            <!--<div class="list-empty-tips" style="display: block;visibility: visible;">-->
+                <!--<div class="clearfix module-list-view-empty" style="" node-type="module">-->
+                    <!--<div class="no-result-file-download">-->
+                        <!--<div class="no-result-title no-result-file-bottom">-->
+                            <!--<p class="no-result-file-word">-->
+                                <!--您还没上传过文件哦，点击<span class="up-load upload-wrapper">上传-->
+					<!--<form action="javascript:void(0);" style="position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;cursor:pointer;">-->
+                        <!--<input title="点击选择文件" id="h5Input3" multiple="" accept="*/*" type="file" name="html5uploader" style="position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;cursor:pointer;">-->
+                    <!--</form>-->
+					<!--</span>按钮～-->
+                            <!--</p>-->
+                        <!--</div>-->
+                        <!--<div class="no-result-file-twocode" node-type="no-result-twocode-pic">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</empty>-->
+    <!--</empty>-->
+</div>
