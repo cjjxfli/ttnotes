@@ -73,7 +73,7 @@ CREATE TABLE `notes_articles`(
 	`category_id` int(11) NOT NULL COMMENT '目录表id',
 	`ref_article_url` varchar(255) NOT NULL DEFAULT '' COMMENT '文章引用原文链接地址',
 	`path_article` varchar(255) NOT NULL DEFAULT '' COMMENT '文章在本系统的存储路径',
-	`encode_contents` text NOT NULL DEFAULT '' COMMENT '文章内容',
+	`encode_contents` mediumtext NOT NULL DEFAULT '' COMMENT '文章内容，足够保存16M长度的文章',
 	`title_article` varchar(255) NOT NULL DEFAULT '' COMMENT '文章标题',
 	`key_words_article` varchar(255) NOT NULL DEFAULT '' COMMENT '文章关键字',
 	`abstract_article` varchar(255) NOT NULL DEFAULT '' COMMENT '文章摘要',

@@ -20,6 +20,7 @@ class ArticleController extends HomeController{
             $article_abstract = I("post.article_abstract");
             $extra_editor = I("post.extra_editor");
             $category_id = I("post.category_id");
+            //var_dump($extra_editor);
             if(empty($category_id)){
                 $category_id = session("article_cat_id");
             }
@@ -129,7 +130,13 @@ class ArticleController extends HomeController{
                 $article_info = array();
                 $article_info["id"] = $id;
                 $article_info["title"] = $list[0]["title_article"];
-                $article_info["content"] = $list[0]["encode_contents"];
+                //从文件读取数据
+                $file_contents = file_get_contents($list[0]["path_article"]);
+                if(!empty($file_contents)){
+                    $article_info["content"] = htmlspecialchars_decode($file_contents);
+                }else{
+                    $article_info["content"] = $list[0]["encode_contents"];
+                }
                 $this->assign("article_info",$article_info);
             }
             $this->display("details");

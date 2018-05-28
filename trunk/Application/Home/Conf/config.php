@@ -140,5 +140,5 @@ return array(
 	//允许不登录就能访问的操作
 	'ALLOW_VISIT_WITHOUT_LOGIN' => array("login","register","verify","index","openCategory","readCategoryTrees","active","downloadSoftware","openArticle"),
 	'SECOND_HEADER' => array("insurance","news","index","student","company","user","satisfy","teacher","partner","about","userCenter"),
-	'SOFTWARE_UPLOAD_BASE_PATH' => "./Uploads/software/",
+	'SOFTWARE_UPLOAD_BASE_PATH' => "./Uploads/product/",
 );
