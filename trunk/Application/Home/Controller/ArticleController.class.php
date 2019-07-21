@@ -78,10 +78,13 @@ class ArticleController extends HomeController{
                 $this->ajaxReturn($dataJson);
             }
             $article_model = D("Articles");
-            $data_article = array();
-            $data_article["status"] = 2;
-            $data_article["last_update_time"] = time();
-            $article_model->updateArticle($src_category,$data_article);
+            foreach($src_category as $cid){
+                $data_article = array();
+                $data_article["status"] = 2;
+                $data_article["last_update_time"] = time();
+                $article_model->updateArticle($cid,$data_article);
+            }
+
             $dataJson = array("flag" => 1,"msg" => "ok");
             $this->ajaxReturn($dataJson);
         }
@@ -147,6 +150,12 @@ class ArticleController extends HomeController{
         if(IS_POST){
             $src_cid = I("post.src_cid");
             $dst_cid = I("post.dst_cid");
+            if(is_array($src_cid)){
+                $src_cid = $src_cid[0];
+            }
+            if(is_array($dst_cid)){
+                $dst_cid = $dst_cid[0];
+            }
 
             if($src_cid == $dst_cid){
                 $dataJson = array("flag" => 0,"msg" => "不能复制自己节点");
@@ -181,17 +190,26 @@ class ArticleController extends HomeController{
             $src_cid = I("post.src_cid");
             $dst_cid = I("post.dst_cid");
 
+//            if(is_array($src_cid)){
+//                $src_cid = $src_cid[0];
+//            }
+//            if(is_array($dst_cid)){
+//                $dst_cid = $dst_cid[0];
+//            }
             if($src_cid == $dst_cid){
                 $dataJson = array("flag" => 0,"msg" => "不能复制自己节点");
                 $this->ajaxReturn($dataJson);
             }
             $article_model = D("Articles");
-            $list = $article_model->getArticle($src_cid);
-            if(is_array($list) && count($list) > 0){
-                $data = $list[0];
-                $data["category_id"] = $dst_cid;
-                $article_model->addArticle($data);
+            foreach($src_cid as $cid){
+                $list = $article_model->getArticle($cid);
+                if(is_array($list) && count($list) > 0){
+                    $data = $list[0];
+                    $data["category_id"] = $dst_cid;
+                    $article_model->addArticle($data);
+                }
             }
+
             $dataJson = array("flag" => 1,"msg" => "ok");
             $this->ajaxReturn($dataJson);
         }

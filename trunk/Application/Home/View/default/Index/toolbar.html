@@ -3,20 +3,20 @@
         <div>
             <div class="default-dom">
                 <!--begin list-grid-switch-->
-                <div class="list-grid-switch" rm-data="list-switched-on">
-                    <a node-type="list-switch" style="display: none;" class="list-switch" href="javascript:void(0)">
-                        <span class="icon icon-list"></span>
-                    </a>
-                    <a node-type="grid-switch" class="grid-switch" href="javascript:void(0)">
-                        <span class="icon icon-grid"></span>
-                    </a>
-                </div>
+                <!--<div class="list-grid-switch" rm-data="list-switched-on">-->
+                    <!--<a node-type="list-switch" style="display: none;" class="list-switch" href="javascript:void(0)">-->
+                        <!--<span class="icon icon-list"></span>-->
+                    <!--</a>-->
+                    <!--<a node-type="grid-switch" class="grid-switch" href="javascript:void(0)">-->
+                        <!--<span class="icon icon-grid"></span>-->
+                    <!--</a>-->
+                <!--</div>-->
                 <!--end list-grid-switch-->
                 <!--begin sort-switch-->
                 <div class="sort-switch">
-                    <div node-type="sort-switch-btn" class="sort-switch-btn" href="javascript:void(0)">
-                        <span class="icon icon-order"></span>
-                    </div>
+                    <!--<div node-type="sort-switch-btn" class="sort-switch-btn" href="javascript:void(0)">-->
+                        <!--<span class="icon icon-order"></span>-->
+                    <!--</div>-->
                     <div node-type="sort-switch-list" class="sort-switch-list">
                         <span data-key="name" class="sort-item">
                         <em class="icon icon-sort-select"></em>
@@ -24,7 +24,7 @@
                         </span>
                         <span data-key="size" class="sort-item">
                         <em class="icon icon-sort-select"></em>
-                        大小
+                        文件个数
                         </span>
                         <span data-key="time" class="sort-item current">
                         <em class="icon icon-sort-select"></em>
@@ -34,18 +34,18 @@
                 </div>
                 <!--end sort-switch-->
                 <!--begin bar-search-->
-                <div class="bar-search">
-                    <div class="form-box" node-type="form-box">
-                        <form node-type="search-form" class="search-form clearfix" action="javascript: void(0)" method="get">
-                            <input node-type="search-query click-ele" data-key="SEARCH_QUERY" autocomplete="off" class="search-query" name="q" value="" spellchecking="off" type="text">
-                            <span node-type="search-clear" class="input-clear icon icon-search-del" style="display: none;"></span>
-                                <span node-type="click-ele" data-key="SEARCH_BUTTON" class="search-button">
-                                <span class="icon icon-search"></span>
-                                </span>
-                            <span node-type="search-placeholder" class="input-placeholder" style="display: block;">搜索您的文件</span>
-                        </form>
-                    </div>
-                </div>
+                <!--<div class="bar-search">-->
+                    <!--<div class="form-box" node-type="form-box">-->
+                        <!--<form node-type="search-form" class="search-form clearfix" action="javascript: void(0)" method="get">-->
+                            <!--<input node-type="search-query click-ele" data-key="SEARCH_QUERY" autocomplete="off" class="search-query" name="q" value="" spellchecking="off" type="text">-->
+                            <!--<span node-type="search-clear" class="input-clear icon icon-search-del" style="display: none;"></span>-->
+                                <!--<span node-type="click-ele" data-key="SEARCH_BUTTON" class="search-button">-->
+                                <!--<span class="icon icon-search"></span>-->
+                                <!--</span>-->
+                            <!--<span node-type="search-placeholder" class="input-placeholder" style="display: block;">搜索您的文件</span>-->
+                        <!--</form>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <!--end bar-search-->
                 <!--end sort-switch-->
                 <div class="bar" rm-style="white-space: nowrap;position: relative">
@@ -119,29 +119,29 @@
                     <!--begin list-tools-->
                     <div class="list-tools opacity-button-box" style="position: absolute; top: 0px; padding-top: 11px; line-height: normal; display: block; visibility: hidden; width: auto; padding-left: 327px;">
                         <a class="g-button" data-button-id="b23" data-button-index="3" href="javascript:void(0);" style="display: inline-block;">
-                        <span class="g-button-right">
+                        <span class="g-button-right" id="btn-download">
                             <em class="icon icon-download" title="下载"></em>
                             <span class="text" style="width: auto;">下载</span>
                         </span>
                         </a>
                         <a class="g-button" data-button-id="b27" data-button-index="5" href="javascript:void(0);" style="display: inline-block;">
-                        <span class="g-button-right">
+                        <span class="g-button-right" id="btn-delete">
                             <em class="icon icon-delete" title="删除"></em>
                             <span class="text" style="width: auto;">删除</span>
                         </span>
                         </a>
                         <a class="g-button" data-button-id="b35" data-button-index="101" href="javascript:void(0);" style="display: inline-block;">
-                        <span class="g-button-right">
+                        <span class="g-button-right" id="btn-rename">
                             <span class="text" style="width: auto;">重命名</span>
                         </span>
                         </a>
                         <a class="g-button" data-button-id="b37" data-button-index="102" href="javascript:void(0);" style="display: inline-block;">
-                        <span class="g-button-right">
+                        <span class="g-button-right" id="btn-copy-to">
                             <span class="text" style="width: auto;">复制到</span>
                         </span>
                         </a>
                         <a class="g-button" data-button-id="b39" data-button-index="103" href="javascript:void(0);" style="display: inline-block;">
-                        <span class="g-button-right">
+                        <span class="g-button-right" id="btn-move-to">
                             <span class="text" style="width: auto;">移动到</span>
                         </span>
                         </a>

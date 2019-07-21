@@ -295,8 +295,9 @@ class CategoryController extends HomeController{
     public function readCategoryTrees(){
         if(IS_POST){
             $cid = -1;
+            $user_id = session("user_id");
             $model_category = D("Categorys");
-            $list = $model_category->getSonsCategoryByUserID($cid);
+            $list = $model_category->getSonsCategoryByUserID($cid,$user_id,1);
             $category_data = array();
             foreach($list as $k => $v){
                 $temp = array();
