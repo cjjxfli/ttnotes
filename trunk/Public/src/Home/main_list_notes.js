@@ -51,12 +51,30 @@ $(function () {
             //g_active_node = $(this);
             $("#menu .list").css("display", "block");
             $("#menu .list").css("left", oX).css("top", oY);
+            var outerHTML = $(event.target).prop("outerHTML");// $(this).attr("date-article");
+            var articleAttr = $(outerHTML).attr("date-article");
+            if (articleAttr !== null && articleAttr !== undefined && articleAttr !== '') {
+                $("#edit-menu").removeClass("hidden");
+                $("#edit-menu").attr("article-cid",$(outerHTML).attr("article-cid"));
+            } else {
+                $("#edit-menu").addClass("hidden");
+                $("#edit-menu").attr("article-cid","");
+            }
             //event && event.preventDefault ? event.preventDefault()/*W3C*/: window.event.returnValue = false/*IE*/;
         } else {
             $("#menu .list").css("display", "none");
         }
         //event.bubbles = false;
         return false;
+    });
+
+    //编辑笔记
+    $("#edit-menu").on("click", function (event) {
+        var outerHTML = $(event.target).prop("outerHTML");// $(this).attr("date-article");
+        var articleCid = $(outerHTML).attr("article-cid");
+        if (articleCid !== null && articleCid !== undefined && articleCid !== '') {
+            window.location = "/index.php/Home/Article/editArticle/aid/" + articleCid;
+        }
     });
 
     //category鼠标选中响应
@@ -150,7 +168,7 @@ $(function () {
             } else if (SOFTWARECATEGORY_CMD == cmd_type) {
                 tmp_url = $("#menu").attr("data-on-cmd-req-software");
                 tmp_url += "/openSoftwareCategory";
-            } else if(ARTICLE_CMD == cmd_type){
+            } else if (ARTICLE_CMD == cmd_type) {
                 //copy article
                 tmp_url = "/index.php/Home/Article/copyArticle";
             }
@@ -377,7 +395,7 @@ $(function () {
             } else if (SOFTWARECATEGORY_CMD == cmd_type) {
                 tmp_url = $("#menu").attr("data-on-cmd-req-software");
                 tmp_url += "/openSoftwareCategory";
-            }else if(ARTICLE_CMD == cmd_type){
+            } else if (ARTICLE_CMD == cmd_type) {
                 //copy article
                 tmp_url = "/index.php/Home/Article/moveArticle";
             }
@@ -953,4 +971,6 @@ $(function () {
         var url = on_cmd_req_href + "/moveArticle";
         moveArticle(url);
     });
+
+
 });

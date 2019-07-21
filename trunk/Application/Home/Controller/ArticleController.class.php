@@ -90,11 +90,92 @@ class ArticleController extends HomeController{
         }
     }
 
+    /**
+     * 更新笔记
+     */
     public function updateArticle(){
         if(IS_POST){
+            $article_title = I("post.article_title");
+            $article_key_words = I("post.article_key_words");
+            $article_from_where = I("post.article_from_where");
+            $article_abstract = I("post.article_abstract");
+            $extra_editor = I("post.extra_editor");
+            $category_id = I("post.category_id");
+            $article_id = I("post.article_id");
+            //var_dump($extra_editor);
+            if(empty($category_id)){
+                $category_id = session("article_cat_id");
+            }
+            if(empty($category_id) || empty($article_title) || empty($extra_editor)){
+                $dataJson = array("flag" => 0,"msg" => "参数不能为空");
+                $this->ajaxReturn($dataJson);
+            }
+            $data_article = array();
+            $data_article["category_id"] = $category_id;
+            if(!empty($article_from_where)){
+                $data_article["ref_article_url"] = $article_from_where;
+            }
+            $file_path = $this->saveProductArticle($extra_editor);
+            if(!empty($file_path)){
+                $data_article["path_article"] = $file_path;
+            }
+            $extra_decode_content = htmlspecialchars_decode($extra_editor);
+            $data_article["encode_contents"] = $extra_decode_content;
+            $data_article["title_article"] = $article_title;
+            if(!empty($article_key_words)){
+                $data_article["key_words_article"] = $article_key_words;
+            }
+            if(!empty($article_abstract)){
+                $data_article["abstract_article"] = $article_abstract;
+            }
+            $data_article["status"] = 1;
+            $now_time = time();
+            $data_article["create_category_time"] = $now_time;
+            $data_article["last_update_time"] = $now_time;
+            $data_article["last_visit_time"] = $now_time;
+            $data_article["user_id"] = session("user_id");
+
+            $model_article = D("Articles");
+            $model_article->updateArticle($article_id,$data_article);
+            session("article_cat_id","");
             $dataJson = array("flag" => 1,"msg" => "ok");
             $this->ajaxReturn($dataJson);
+        }else{
+            $category_id = I("get.cid");
+            if(empty($category_id)){
+                $category_id = -1;
+            }
+            session("article_cat_id",$category_id);
+            $this->assign("category_id",$category_id);
+            $this->display("new_file");
         }
+    }
+
+    public function editArticle(){
+        $aid = I("get.aid");
+        if($aid < 1){
+            $this->error("文章不存在",U('Home/Index/index'));
+        }
+        $model_article = D("Articles");
+        $list = $model_article->getArticle($aid);
+        if(is_array($list) && count($list) > 0){
+            $article_info = array();
+            $article_info["id"] = $aid;
+            $article_info["title"] = $list[0]["title_article"];
+            $article_info["key_words_article"] = $list[0]["key_words_article"];
+            $article_info["ref_article_url"] = $list[0]["ref_article_url"];
+            $article_info["abstract_article"] = $list[0]["abstract_article"];
+            $article_info["category_id"] = $list[0]["category_id"];
+            //从文件读取数据
+            $file_contents = file_get_contents($list[0]["path_article"]);
+            if(!empty($file_contents)){
+                $article_info["content"] = htmlspecialchars_decode($file_contents);
+            }else{
+                $article_info["content"] = $list[0]["encode_contents"];
+            }
+            $this->assign("article_info",$article_info);
+        }
+        $this->display("edit");
     }
 
     public function renameArticle(){

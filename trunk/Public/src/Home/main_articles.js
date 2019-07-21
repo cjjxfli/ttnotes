@@ -59,6 +59,66 @@ $(function(){
         }
     });
 
+    //修改
+    $("#edit-article-form").validate({
+        rules:{
+            user_email:{
+                isNeedEmail:true,
+            },
+            verify_email_code:{
+                isNeedEmailCode:true,
+            },
+            mobile:{
+                isNeedMobile:true,
+            },
+            verify_mobile_code:{
+                isNeedMobileCode:true,
+            },
+        },
+        messages:{
+        },
+        submitHandler:function(form){
+            //circle load
+            $.showShCircle("shCircle");
+            var cid = $("#edit-article-form").attr("data-category-id");
+            var aid = $("#edit-article-form").attr("article-id");
+            $.ajax({
+                url:$("#edit-article-form").attr("action"),
+                type:"post",
+                dataType:"json",
+                data:{
+                    article_title:$("#article-title").val(),
+                    article_key_words:$("#article-key-words").val(),
+                    article_from_where:$("#article-from-where").val(),
+                    article_abstract:$("#article-abstract").val(),
+                    extra_editor:UE.getEditor("extra-editor").getContent(),
+                    category_id:cid,
+                    article_id:aid,
+                },
+                success:function(jsonData){
+                    //circle load
+                    $.closeShCircle("shCircle");
+                    if(jsonData.flag == 1){
+                        window.location = $("#edit-article-form").attr("data-jump");
+                    }else{
+                        alert(jsonData.msg);
+                    }
+                },
+                error:function(jsonData){
+                    alert(jsonData);
+                    //circle load
+                    $.closeShCircle("shCircle");
+                }
+            });
+        },
+        errorContainer: "div.error",
+        errorLabelContainer: $("#edit-article-form div.error"),
+        wrapper: "li",
+        errorPlacement: function(error, element) {
+            error.appendTo(element.parent());
+        }
+    });
+
     //历史返回
     $("#last-history").on("click",function(){
         history.go(-1);
