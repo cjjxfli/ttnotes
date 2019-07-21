@@ -146,32 +146,32 @@ class ArticleController extends HomeController{
         }
     }
 
+    /**
+     * 批量移动文章
+     */
     public function moveArticle(){
         if(IS_POST){
             $src_cid = I("post.src_cid");
             $dst_cid = I("post.dst_cid");
-            if(is_array($src_cid)){
-                $src_cid = $src_cid[0];
-            }
-            if(is_array($dst_cid)){
-                $dst_cid = $dst_cid[0];
-            }
+
 
             if($src_cid == $dst_cid){
                 $dataJson = array("flag" => 0,"msg" => "不能复制自己节点");
                 $this->ajaxReturn($dataJson);
             }
             $article_model = D("Articles");
-            $list = $article_model->getArticle($src_cid);
-            if(is_array($list) && count($list) > 0){
-                $data = $list[0];
-                $data["category_id"] = $dst_cid;
-                $article_model->addArticle($data);
-                //将原文章标记为删除
-                $update_article_data = array();
-                $update_article_data["status"] = 2;
-                $update_article_data["last_update_time"] = time();
-                $article_model->updateArticle($list[0]["id"],$update_article_data);
+            foreach($src_cid as $cid){
+                $list = $article_model->getArticle($cid);
+                if(is_array($list) && count($list) > 0){
+                    $data = $list[0];
+                    $data["category_id"] = $dst_cid;
+                    $article_model->addArticle($data);
+                    //将原文章标记为删除
+                    $update_article_data = array();
+                    $update_article_data["status"] = 2;
+                    $update_article_data["last_update_time"] = time();
+                    $article_model->updateArticle($list[0]["id"],$update_article_data);
+                }
             }
             $dataJson = array("flag" => 1,"msg" => "ok");
             $this->ajaxReturn($dataJson);
@@ -185,17 +185,15 @@ class ArticleController extends HomeController{
         }
     }
 
+    /**
+     * 批量拷贝文章
+     */
     public function copyArticle(){
         if(IS_POST){
             $src_cid = I("post.src_cid");
             $dst_cid = I("post.dst_cid");
 
-//            if(is_array($src_cid)){
-//                $src_cid = $src_cid[0];
-//            }
-//            if(is_array($dst_cid)){
-//                $dst_cid = $dst_cid[0];
-//            }
+
             if($src_cid == $dst_cid){
                 $dataJson = array("flag" => 0,"msg" => "不能复制自己节点");
                 $this->ajaxReturn($dataJson);
