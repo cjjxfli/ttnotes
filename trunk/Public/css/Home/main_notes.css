@@ -3033,3 +3033,12 @@ input::-ms-clear, .global-hide, .g-hide, .dialog-plugin-manage .dialog-footer, .
 .fileicon-sys-s-web {
   background: url(../../img/Common/Web_24_09682ee.png?__sprite) center no-repeat;
 }
+
+.pages {
+  text-align: right;
+}
+
+.pages .num {
+  width: 30px;
+  text-align: center;
+}
