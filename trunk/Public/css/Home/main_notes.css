@@ -1920,7 +1920,6 @@ table {
 }
 
 .list-header-operatearea .list-tools {
-  margin-top: -11px;
   z-index: 2;
 }
 
@@ -2215,6 +2214,7 @@ table {
 .module-toolbar .list-tools {
   z-index: 1;
   margin-left: 5px;
+  margin-top: -10px;
 }
 
 .module-list .list-tools .g-dropdown-button, .module-list .list-tools a, .module-toolbar .list-tools .g-dropdown-button, .module-toolbar .list-tools a {
@@ -2223,6 +2223,7 @@ table {
 
 .module-list .list-tools a, .module-toolbar .list-tools a {
   border-radius: 0;
+  margin-top: -10px;
 }
 
 .module-toolbar .list-tools > .g-button:nth-child(1) {
