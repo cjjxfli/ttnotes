@@ -9,6 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 namespace Think;
+use Org\Util;
 /**
  * ThinkPHP 数据库中间层实现类
  */
@@ -117,10 +118,15 @@ class Db {
             $db_config = $this->parseDSN($db_config);
         }elseif(is_array($db_config)) { // 数组配置
              $db_config =   array_change_key_case($db_config);
+            $enc = new \Org\Util\Mcrypt;
+            $user = $db_config['db_user'];
+            $pwd = $db_config['db_pwd'];
+            $user = $enc->decByBase64($user);
+            $pwd = $enc->decByBase64($pwd);
              $db_config = array(
                   'dbms'      =>  $db_config['db_type'],
-                  'username'  =>  $db_config['db_user'],
-                  'password'  =>  $db_config['db_pwd'],
+                  'username'  => $user ,
+                  'password'  => $pwd ,
                   'hostname'  =>  $db_config['db_host'],
                   'hostport'  =>  $db_config['db_port'],
                   'database'  =>  $db_config['db_name'],
@@ -133,10 +139,15 @@ class Db {
             if( C('DB_DSN') && 'pdo' != strtolower(C('DB_TYPE')) ) { // 如果设置了DB_DSN 则优先
                 $db_config =  $this->parseDSN(C('DB_DSN'));
             }else{
+                $enc = new \Org\Util\Mcrypt;
+                $pwd = C('DB_PWD');
+                $user = C('DB_USER');
+                $user = $enc->decByBase64($user);
+                $pwd = $enc->decByBase64($pwd);
                 $db_config = array (
                     'dbms'      =>  C('DB_TYPE'),
-                    'username'  =>  C('DB_USER'),
-                    'password'  =>  C('DB_PWD'),
+                    'username'  =>  $user,
+                    'password'  =>  $pwd,
                     'hostname'  =>  C('DB_HOST'),
                     'hostport'  =>  C('DB_PORT'),
                     'database'  =>  C('DB_NAME'),

@@ -9,6 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 namespace Think\Session\Driver;
+use Org\Util;
 /**
  * 数据库方式Session驱动
  *    CREATE TABLE think_session (
@@ -50,6 +51,9 @@ class Db {
        $name = explode(',',C('DB_NAME'));
        $user = explode(',',C('DB_USER'));
        $pwd  = explode(',',C('DB_PWD'));
+        $enc = new \Org\Util\Mcrypt;
+        $user = $enc->decByBase64($user);
+        $pwd = $enc->decByBase64($pwd);
        if(1 == C('DB_DEPLOY_TYPE')){
            //读写分离
            if(C('DB_RW_SEPARATE')){

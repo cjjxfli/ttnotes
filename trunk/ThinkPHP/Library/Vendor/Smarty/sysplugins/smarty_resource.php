@@ -620,7 +620,7 @@ class Smarty_Template_Source {
     public $recompiled = null;
 
     /**
-     * The Components an extended template is made of
+     * The Tool an extended template is made of
      * @var array
      */
     public $components = null;

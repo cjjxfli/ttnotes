@@ -401,12 +401,12 @@
 
 
 		/**
-		* Splits Template-Style Variable Names into an Array-Name/Key-Name Components
+		* Splits Template-Style Variable Names into an Array-Name/Key-Name Tool
 		*
 		* @param string $tag Variale Name used in Template
 		* @return array  Array Name, Key Name
 		* @access private
-		* @desc Splits Template-Style Variable Names into an Array-Name/Key-Name Components
+		* @desc Splits Template-Style Variable Names into an Array-Name/Key-Name Tool
 		*/
 		function var_name($tag)
 		{

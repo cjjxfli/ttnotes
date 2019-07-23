@@ -272,7 +272,7 @@
 
 
 		/**
-		* Splits Template-Style Variable Names into an Array-Name/Key-Name Components
+		* Splits Template-Style Variable Names into an Array-Name/Key-Name Tool
 		* {example}               :  array( "_obj",                   "example" )  ->  $_obj['example']
 		* {example.value}         :  array( "_obj['example']",        "value" )    ->  $_obj['example']['value']
 		* {example.0.value}       :  array( "_obj['example'][0]",     "value" )    ->  $_obj['example'][0]['value']
@@ -283,7 +283,7 @@
 		* @param string $tag Variale Name used in Template
 		* @return array  Array Name, Key Name
 		* @access private
-		* @desc Splits Template-Style Variable Names into an Array-Name/Key-Name Components
+		* @desc Splits Template-Style Variable Names into an Array-Name/Key-Name Tool
 		*/
 		function var_name($tag)
 		{

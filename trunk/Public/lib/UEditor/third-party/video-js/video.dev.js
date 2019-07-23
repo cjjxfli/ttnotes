@@ -1297,7 +1297,7 @@ vjs.findPosition = function(el) {
 /**
  * Base UI Component class
  *
- * Components are embeddable UI objects that are represented by both a
+ * Tool are embeddable UI objects that are represented by both a
  * javascript object and an element in the DOM. They can be children of other
  * components, and can have many children themselves.
  *
@@ -1309,7 +1309,7 @@ vjs.findPosition = function(el) {
  *       <div class="vjs-button">Button</div>
  *     </div>
  *
- * Components are also event emitters.
+ * Tool are also event emitters.
  *
  *     button.on('click', function(){
  *       console.log('Button Clicked!');
