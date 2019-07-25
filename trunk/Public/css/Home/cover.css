@@ -424,6 +424,7 @@
   box-shadow: none;
   overflow: hidden;
   border: 0;
+  z-index: 1000;
 }
 
 .dialog .dialog-min-header, .dialog .dialog-header {
