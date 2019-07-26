@@ -307,6 +307,23 @@ class ArticleController extends HomeController{
             if(!$info) {// 上传错误提示错误信息
                 $this->error($upload->getError());
             }else{// 上传成功
+                $data_article = array();
+                $data_article["category_id"] = $cid;
+                if(!empty($article_from_where)){
+                    $data_article["ref_article_url"] = $info['uploadfile']["savepath"];
+                }
+                $data_article["path_article"] = "Uploads/" .  $info['uploadfile']["savepath"] . $info['uploadfile']["savename"];
+                $data_article["title_article"] = $info['uploadfile']["name"];
+                $data_article["status"] = 1;
+                $now_time = time();
+                $data_article["create_category_time"] = $now_time;
+                $data_article["last_update_time"] = $now_time;
+                $data_article["last_visit_time"] = $now_time;
+                $data_article["user_id"] = session("user_id");
+
+                $model_article = D("Articles");
+                $model_article->addArticle($data_article);
+                session("article_cat_id","");
                 $this->success('上传成功！');
             }
         }
